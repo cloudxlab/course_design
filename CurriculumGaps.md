@@ -13,8 +13,7 @@
 
 **4. ~~Probability & Statistics~~** ✅ *Covered in Python chapter as a short project*
 
-**5. Dynamic Programming**
-BFS/DFS/merge sort are covered, but DP is missing. It is one of the most common interview topics and also a beautiful example of first-principles thinking (breaking a problem into overlapping subproblems).
+**5. ~~Dynamic Programming~~** ✅ *Added to Module 1 (Python by Invention) alongside recursion and algorithms*
 
 **6. ~~RAG (Retrieval-Augmented Generation)~~** ✅ *Covered in Python chapter as a short project*
 
