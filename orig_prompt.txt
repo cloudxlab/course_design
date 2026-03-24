@@ -1,0 +1,25 @@
+Please suggest course title and design the course landing page for the following course by CloudxLab:
+
+The opening chapter of the course is Designing your own number system. Everyone has to choose a base and write their counting upto three digits in that base. Then they have to do additions, subtractions and multiplication in that base. This chapters sets an example of the format of the course - the course is about learning by inventing.
+
+The course starts with basics of Python. The learners have to solve the problems using Python. The core idea is to teach by inventing.
+The students learn the concepts by solving maths and algorithms problems using Python. The teaching of concepts is minimal. Instead, the problems statements are very simple in the begining and then the problem statements gradually become complex.
+
+During Python chapter, people also learning interacting with LLMs, LLM Embeddings - Perform Sentiment Analysis and Semantic Search. Building AI Agents etc.
+
+During the Python course, the students learn basics of maths, data structures (BST, queues, trees), algorithms (binary search, BFS, DFS, merge sort, quick sort), concepts of Python and some basic machine learning algorithms such as KNN, KMEANs, Naive bays. They also build their own decision trees and train it.
+
+Afterwards, we start with foundational tools such as Numpy, pandas, matplotlib. Here also, the students learn ideas by building recommendation engine, image manipulation. People also build their own linear regression using their own gradient decent.
+
+Then, we learning machine learning concepts such as End to End project (hands-on), Linear Regression, Logistic Regression, Decision Trees, Ensemble Learning, Unsupervised Learning. The key part is everyone has to invent their own algorithms. This part is delivered by IIT Professors.
+
+Afterwards, we start the Deep Learning section which includes Introduction to ANN, training ANN (nitty gritties of ANN), RNN, LSTM, Attention, Autoencoders, CNN, Reinforcement Learning. People implement their own ideas as part these topics.
+
+Key Hightlights:
+    - Learn by inventing, work out exercises
+    - Become Job ready - crack iterviews of SDE, Data Scientist, ML Engineer, AI Engineer, ML Scientist, ML Researcher
+    - It is not a course, it is journey of transformation. Changes you from a person chasing formulas to a first principle thinker.
+    - The aim is to change your own perseption in your own eyes.
+    - Be fearless while asking questions. Learn to enjoy the questions by others in class
+    - You would find people from various walks of life and various age groups in this class. Keep your mental blocks (gender, profession, age) outside the classs.
+    - Everyone who has finished their 10th Grade is welcome.

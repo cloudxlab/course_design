@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Inventor's Journey — CloudxLab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #0d0f1a;
+      --white:    #ffffff;
+      --slate:    #64748b;
+      --light:    #f8fafc;
+      --border:   #e2e8f0;
+      --accent:   #6c3bff;
+      --accent2:  #ff5c35;
+      --accent3:  #00c2a8;
+      --grad:     linear-gradient(135deg, #6c3bff 0%, #a855f7 50%, #ec4899 100%);
+      --grad2:    linear-gradient(135deg, #0d0f1a 0%, #1e1b4b 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(13,15,26,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-logo { display: flex; align-items: center; gap: .5rem; text-decoration: none; }
+    .nav-logo-badge {
+      background: var(--grad); color: #fff;
+      font-size: .7rem; font-weight: 800; letter-spacing: .08em;
+      padding: .25rem .55rem; border-radius: 6px;
+    }
+    .nav-logo-text { color: #fff; font-size: 1.05rem; font-weight: 700; }
+    .nav-cta {
+      background: var(--grad); color: #fff;
+      border: none; border-radius: 8px;
+      padding: .55rem 1.4rem; font-size: .9rem; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      transition: opacity .2s;
+    }
+    .nav-cta:hover { opacity: .85; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--grad2);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(108,59,255,.25) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 40%, rgba(236,72,153,.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(108,59,255,.2); border: 1px solid rgba(108,59,255,.4);
+      color: #c4b5fd; font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      padding: .4rem 1rem; border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: #a855f7; display: inline-block; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 800; color: #fff;
+      line-height: 1.12;
+      max-width: 820px; margin: 0 auto .6rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: #94a3b8; max-width: 640px; margin: 0 auto 2.5rem;
+      font-weight: 400; line-height: 1.7;
+    }
+    .hero-subtitle strong { color: #e2e8f0; font-weight: 600; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 3.5rem; }
+    .btn-primary {
+      background: var(--grad); color: #fff;
+      padding: .9rem 2rem; border-radius: 10px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: .5rem;
+      box-shadow: 0 0 32px rgba(108,59,255,.45);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 48px rgba(108,59,255,.6); }
+    .btn-secondary {
+      background: transparent; color: #e2e8f0;
+      padding: .9rem 2rem; border-radius: 10px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      border: 1px solid rgba(255,255,255,.2);
+      transition: border-color .2s, background .2s;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.05); }
+
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 1.9rem; font-weight: 800; color: #fff; line-height: 1; }
+    .hero-stat .lbl { font-size: .75rem; color: #94a3b8; font-weight: 500; letter-spacing: .05em; margin-top: .2rem; }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 5rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: .75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800; line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--slate); font-size: 1.05rem; max-width: 600px; line-height: 1.7; }
+
+    /* ── TRANSFORMATION BANNER ── */
+    .transform-banner {
+      background: var(--grad2);
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+    .transform-banner .section-tag { color: #a78bfa; }
+    .transform-banner .section-title { color: #fff; }
+    .transform-banner p { color: #94a3b8; font-size: 1.1rem; max-width: 680px; margin: 0 auto 2rem; line-height: 1.8; }
+    .transform-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      color: #e2e8f0; max-width: 760px; margin: 2rem auto;
+      border-left: 3px solid #a855f7; padding-left: 1.5rem; text-align: left;
+    }
+
+    /* ── PHILOSOPHY CARDS ── */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .phil-card {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .phil-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); transform: translateY(-3px); }
+    .phil-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1rem;
+    }
+    .phil-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .5rem; }
+    .phil-card p { color: var(--slate); font-size: .92rem; line-height: 1.65; }
+
+    /* ── CURRICULUM ── */
+    .curriculum { background: var(--light); }
+    .curriculum-grid {
+      display: grid; gap: 1rem; margin-top: 3rem;
+    }
+    .module {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+    }
+    .module-header {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.25rem 1.5rem; cursor: pointer;
+      transition: background .15s;
+    }
+    .module-header:hover { background: var(--light); }
+    .module-num {
+      width: 36px; height: 36px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 800; color: #fff; flex-shrink: 0;
+    }
+    .module-title { flex: 1; font-weight: 700; font-size: .97rem; }
+    .module-badge {
+      font-size: .7rem; font-weight: 600; padding: .25rem .6rem;
+      border-radius: 6px; white-space: nowrap;
+    }
+    .module-body {
+      padding: 0 1.5rem 1.25rem 3.75rem;
+      display: grid; gap: .5rem;
+    }
+    .module-topic {
+      display: flex; align-items: flex-start; gap: .6rem;
+      font-size: .88rem; color: var(--slate); line-height: 1.5;
+    }
+    .module-topic::before {
+      content: '→'; color: var(--accent); font-weight: 700;
+      flex-shrink: 0; margin-top: .05rem;
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .highlight-card {
+      border-radius: 16px; padding: 2rem;
+      background: var(--ink); color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .highlight-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--grad); opacity: .1; pointer-events: none;
+    }
+    .highlight-card .hl-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .highlight-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+    .highlight-card p { color: #94a3b8; font-size: .9rem; line-height: 1.65; }
+
+    /* ── CAREERS ── */
+    .careers { background: var(--light); }
+    .careers-list {
+      display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem;
+    }
+    .career-pill {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 100px; padding: .55rem 1.2rem;
+      font-size: .88rem; font-weight: 600; color: var(--ink);
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .career-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+    /* ── WHO ── */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .who-card {
+      text-align: center; padding: 2rem 1.5rem;
+      border-radius: 14px; border: 1px solid var(--border);
+      transition: border-color .2s;
+    }
+    .who-card:hover { border-color: #a855f7; }
+    .who-card .who-icon { font-size: 2.2rem; margin-bottom: .75rem; }
+    .who-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: .4rem; }
+    .who-card p { font-size: .83rem; color: var(--slate); line-height: 1.5; }
+
+    /* ── INCLUSION ── */
+    .inclusion {
+      background: var(--grad2);
+      text-align: center; padding: 5rem 1.5rem;
+    }
+    .inclusion .section-title { color: #fff; }
+    .inclusion p { color: #94a3b8; max-width: 700px; margin: 1rem auto 0; font-size: 1.05rem; line-height: 1.8; }
+    .inclusion-pills {
+      display: flex; flex-wrap: wrap; gap: .75rem;
+      justify-content: center; margin-top: 2rem;
+    }
+    .inclusion-pill {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 100px; padding: .55rem 1.2rem;
+      color: #e2e8f0; font-size: .88rem; font-weight: 500;
+    }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 2.5rem; display: grid; gap: 1rem; }
+    .faq-item {
+      border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+    .faq-item h4 { font-size: .97rem; font-weight: 700; margin-bottom: .5rem; }
+    .faq-item p { color: var(--slate); font-size: .9rem; line-height: 1.65; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--grad);
+      text-align: center; padding: 6rem 1.5rem;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff; font-weight: 800; margin-bottom: 1rem;
+    }
+    .cta-section p { color: rgba(255,255,255,.8); font-size: 1.05rem; margin-bottom: 2rem; }
+    .btn-white {
+      background: #fff; color: var(--accent);
+      padding: 1rem 2.5rem; border-radius: 10px;
+      font-weight: 800; font-size: 1.05rem; text-decoration: none;
+      display: inline-block;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 24px rgba(0,0,0,.2);
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.25); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink); color: #64748b;
+      text-align: center; padding: 2rem 1.5rem;
+      font-size: .85rem;
+    }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    /* ── UTILITIES ── */
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: .5rem; }
+    .mt-2 { margin-top: 1rem; }
+
+    /* Colored accents for modules */
+    .c-purple { background: #6c3bff; }
+    .c-pink   { background: #ec4899; }
+    .c-teal   { background: #00c2a8; }
+    .c-orange { background: #ff5c35; }
+    .c-blue   { background: #3b82f6; }
+    .c-amber  { background: #f59e0b; }
+    .c-green  { background: #22c55e; }
+    .c-rose   { background: #f43f5e; }
+
+    .badge-purple { background: #ede9fe; color: #6c3bff; }
+    .badge-pink   { background: #fce7f3; color: #be185d; }
+    .badge-teal   { background: #ccfbf1; color: #0f766e; }
+    .badge-orange { background: #fff7ed; color: #c2410c; }
+    .badge-blue   { background: #dbeafe; color: #1d4ed8; }
+    .badge-amber  { background: #fef3c7; color: #92400e; }
+    .badge-green  { background: #dcfce7; color: #15803d; }
+    .badge-rose   { background: #ffe4e6; color: #be123c; }
+
+    @media (max-width: 640px) {
+      nav { padding: .75rem 1rem; }
+      .hero-stats { gap: 1.25rem; }
+      .module-body { padding-left: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════ NAV ════════════════════ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <span class="nav-logo-badge">CxL</span>
+    <span class="nav-logo-text">CloudxLab</span>
+  </a>
+  <a class="nav-cta" href="#enroll">Enroll Now</a>
+</nav>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span></span> CloudxLab Flagship Program
+  </div>
+  <h1>The <em>Inventor's Journey</em><br>From First Principles to AI</h1>
+  <p class="hero-subtitle">
+    Stop memorising formulas. Start <strong>inventing</strong>.<br>
+    A ground-up program where you build your own number systems, algorithms,
+    ML models, and neural networks — then understand <em>why</em> they work.
+  </p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#enroll">
+      ✦ Start Your Journey
+    </a>
+    <a class="btn-secondary" href="#curriculum">Explore Curriculum</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">8</div>
+      <div class="lbl">Deep Modules</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">200+</div>
+      <div class="lbl">Hands-on Problems</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">IIT</div>
+      <div class="lbl">Faculty for ML</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">10th</div>
+      <div class="lbl">Grade Onwards</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">6</div>
+      <div class="lbl">Career Paths</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ TRANSFORMATION BANNER ════════════════════ -->
+<div class="transform-banner">
+  <div class="container">
+    <div class="section-tag">Our Promise</div>
+    <h2 class="section-title" style="color:#fff">This is not a course.<br>It is a transformation.</h2>
+    <p>
+      Most programs hand you recipes. We hand you problems — then step back.
+      By the time you finish, you won't just know how to use algorithms;
+      you will know <em>why</em> they exist, because you invented your own versions of them first.
+    </p>
+    <blockquote class="transform-quote">
+      "The aim is not to make you a coder. It is to change the way you see yourself —
+      from someone who chases formulas to a first-principle thinker who is fearless in front of any problem."
+    </blockquote>
+  </div>
+</div>
+
+<!-- ════════════════════ PHILOSOPHY ════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-tag">Learning Philosophy</div>
+    <h2 class="section-title">Why "Invent to Learn" works</h2>
+    <p class="section-sub">Struggling with a problem you designed yourself creates understanding that no lecture can replicate.</p>
+    <div class="philosophy-grid">
+      <div class="phil-card">
+        <div class="phil-icon" style="background:#ede9fe">🔢</div>
+        <h3>Start with your own number system</h3>
+        <p>Day one, you design your own base system and do arithmetic in it. This single exercise rewires how you think about abstraction forever.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon" style="background:#fce7f3">🧪</div>
+        <h3>Problems before explanations</h3>
+        <p>Simple problem statements gradually grow in complexity. Concepts are introduced only once you've felt the need for them — making them stick.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon" style="background:#ccfbf1">🤖</div>
+        <h3>Invent your own algorithms</h3>
+        <p>You'll build your own decision tree, your own gradient descent, your own KNN — before you ever read about the "standard" version.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon" style="background:#fff7ed">🙋</div>
+        <h3>Questions are celebrated</h3>
+        <p>Curiosity is the curriculum. There are no dumb questions. You'll learn to enjoy — even celebrate — the questions posed by your classmates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CURRICULUM ════════════════════ -->
+<section class="curriculum" id="curriculum">
+  <div class="container">
+    <div class="section-tag">What You'll Build</div>
+    <h2 class="section-title">Full Curriculum</h2>
+    <p class="section-sub">Eight progressively deep modules. Each one asks you to invent, not just follow.</p>
+
+    <div class="curriculum-grid">
+
+      <!-- MODULE 0 -->
+      <div class="module">
+        <div class="module-header">
+          <div class="module-num c-purple">0</div>
+          <div class="module-title">Designing Your Own Number System</div>
+          <span class="module-badge badge-purple">Prologue</span>
+        </div>
+        <div class="module-body">
+          <div class="module-topic">Choose your own base and write counting up to three digits in it</div>
+          <div class="module-topic">Perform addition, subtraction, and multiplication in your base</div>
+          <div class="module-topic">Understand why positional notation is a profound invention</div>
+          <div class="module-topic">Sets the tone: you are an inventor, not a consumer of knowledge</div>
+        </div>
+      </div>
+
+      <!-- MODULE 1 -->
+      <div class="module">
+        <div class="module-header">
+          <div class="module-num c-pink">1</div>
+          <div class="module-title">Python by Invention</div>
+          <span class="module-badge badge-pink">Foundation</span>
+        </div>
+        <div class="module-body">
+          <div class="module-topic">Python fundamentals learned by solving progressively harder math problems</div>
+          <div class="module-topic">Data structures you'll build yourself: BSTs, queues, trees</div>
+          <div class="module-topic">Algorithms from scratch: binary search, BFS, DFS, merge sort, quicksort</div>
+          <div class="module-topic">Build and train your own KNN, K-Means, Naïve Bayes, and Decision Tree</div>
+          <div class="module-topic">Interact with LLMs, perform Sentiment Analysis with embeddings</div>
+          <div class="module-topic">Semantic search and building your first AI Agent</div>
+        </div>
+      </div>
+
+      <!-- MODULE 2 -->
+      <div class="module">
+        <div class="module-header">
+          <div class="module-num c-teal">2</div>
+          <div class="module-title">Scientific Python & Data Wrangling</div>
+          <span class="module-badge badge-teal">Tools</span>
+        </div>
+        <div class="module-body">
+          <div class="module-topic">NumPy, Pandas, and Matplotlib — learned by doing, not reading docs</div>
+          <div class="module-topic">Build a recommendation engine from first principles</div>
+          <div class="module-topic">Image manipulation and pixel-level operations</div>
+          <div class="module-topic">Implement your own Linear Regression with your own Gradient Descent</div>
+        </div>
+      </div>
+
+      <!-- MODULE 3 -->
+      <div class="module">
+        <div class="module-header">
+          <div class="module-num c-orange">3</div>
+          <div class="module-title">Machine Learning — End to End</div>
+          <span class="module-badge badge-orange">IIT Faculty</span>
+        </div>
+        <div class="module-body">
+          <div class="module-topic">Complete end-to-end ML project: data → model → evaluation → deployment</div>
+          <div class="module-topic">Linear Regression and Logistic Regression — derive and implement</div>
+          <div class="module-topic">Decision Trees and Ensemble Learning (Bagging, Boosting, Random Forest)</div>
+          <div class="module-topic">Unsupervised Learning: Clustering, Dimensionality Reduction</div>
+          <div class="module-topic">Everyone invents their own variant of a classical algorithm as a project</div>
+          <div class="module-topic">Delivered by IIT Professors</div>
+        </div>
+      </div>
+
+      <!-- MODULE 4 -->
+      <div class="module">
+        <div class="module-header">
+          <div class="module-num c-blue">4</div>
+          <div class="module-title">Deep Learning — Foundations & ANNs</div>
+          <span class="module-badge badge-blue">Deep Learning</span>
+        </div>
+        <div class="module-body">
+          <div class="module-topic">Introduction to Artificial Neural Networks — build one from scratch in NumPy</div>
+          <div class="module-topic">Training nitty-gritties: backpropagation, vanishing gradients, optimisers</div>
+          <div class="module-topic">Implement your own idea as a mini-project within this module</div>
+        </div>
+      </div>
+
+      <!-- MODULE 5 -->
+      <div class="module">
+        <div class="module-header">
+          <div class="module-num c-amber">5</div>
+          <div class="module-title">Sequence Models & Attention</div>
+          <span class="module-badge badge-amber">Deep Learning</span>
+        </div>
+        <div class="module-body">
+          <div class="module-topic">Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM)</div>
+          <div class="module-topic">Attention mechanisms — understanding the foundation of Transformers</div>
+          <div class="module-topic">Autoencoders for representation learning and generation</div>
+        </div>
+      </div>
+
+      <!-- MODULE 6 -->
+      <div class="module">
+        <div class="module-header">
+          <div class="module-num c-green">6</div>
+          <div class="module-title">Convolutional Neural Networks</div>
+          <span class="module-badge badge-green">Deep Learning</span>
+        </div>
+        <div class="module-body">
+          <div class="module-topic">Convolutions — derive from the math, implement, and experiment</div>
+          <div class="module-topic">CNNs for image classification, object detection</div>
+          <div class="module-topic">Build your own architecture and explain every design decision</div>
+        </div>
+      </div>
+
+      <!-- MODULE 7 -->
+      <div class="module">
+        <div class="module-header">
+          <div class="module-num c-rose">7</div>
+          <div class="module-title">Reinforcement Learning</div>
+          <span class="module-badge badge-rose">Advanced</span>
+        </div>
+        <div class="module-body">
+          <div class="module-topic">Markov Decision Processes, policies, rewards</div>
+          <div class="module-topic">Q-Learning and Deep Q-Networks from scratch</div>
+          <div class="module-topic">Design your own environment and train an agent on it</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ HIGHLIGHTS ════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-tag">Key Highlights</div>
+    <h2 class="section-title">What makes this different</h2>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="hl-icon">🔬</div>
+        <h3>Learn by Inventing</h3>
+        <p>Every concept is discovered through structured problem-solving, not lecture slides. You build before you read.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-icon">🎓</div>
+        <h3>IIT Faculty for ML</h3>
+        <p>The Machine Learning module is delivered by IIT Professors — world-class rigour meets real-world application.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-icon">💼</div>
+        <h3>Interview-Ready Graduates</h3>
+        <p>Crack interviews at top companies for SDE, Data Scientist, ML Engineer, AI Engineer, ML Researcher roles.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-icon">🤖</div>
+        <h3>AI & LLM Native</h3>
+        <p>Build AI Agents, perform semantic search and sentiment analysis with LLM embeddings — from within the Python module.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-icon">🧠</div>
+        <h3>First-Principle Thinking</h3>
+        <p>The real outcome isn't a certificate — it's the ability to look at any hard problem and know you can figure it out.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-icon">🌍</div>
+        <h3>A Diverse Classroom</h3>
+        <p>Students from every walk of life, profession, and age group. Leave your mental blocks at the door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CAREERS ════════════════════ -->
+<section class="careers">
+  <div class="container">
+    <div class="section-tag">Career Outcomes</div>
+    <h2 class="section-title">Roles you'll be ready for</h2>
+    <p class="section-sub">This program prepares you to compete for the most sought-after technical roles in the industry.</p>
+    <div class="careers-list">
+      <div class="career-pill"><span class="dot"></span> Software Development Engineer (SDE)</div>
+      <div class="career-pill"><span class="dot"></span> Data Scientist</div>
+      <div class="career-pill"><span class="dot"></span> Machine Learning Engineer</div>
+      <div class="career-pill"><span class="dot"></span> AI Engineer</div>
+      <div class="career-pill"><span class="dot"></span> ML Scientist</div>
+      <div class="career-pill"><span class="dot"></span> ML Researcher</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ WHO IS THIS FOR ════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-tag">Who Should Join</div>
+    <h2 class="section-title">Anyone with curiosity and 10th grade behind them</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-icon">🎒</div>
+        <h4>Students</h4>
+        <p>From high-school to college. Build the foundation that universities rarely teach.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">💻</div>
+        <h4>Working Professionals</h4>
+        <p>Pivot into AI/ML or deepen your technical edge without leaving your job.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🔄</div>
+        <h4>Career Changers</h4>
+        <p>From any field. If you can think, you can learn to invent here.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🧩</div>
+        <h4>Curious Minds</h4>
+        <p>You don't need to know why yet — you just need the itch to figure things out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ INCLUSION ════════════════════ -->
+<div class="inclusion">
+  <div class="container">
+    <div class="section-tag" style="color:#a78bfa">Our Classroom Culture</div>
+    <h2 class="section-title">Everyone belongs here</h2>
+    <p>
+      You will find people from various walks of life and various age groups in this class.
+      We ask you to leave mental blocks — around gender, profession, or age — outside the door.
+      Be fearless while asking questions. Learn to enjoy the questions asked by others.
+      This is a space where no question is too basic, and no curiosity is too ambitious.
+    </p>
+    <div class="inclusion-pills">
+      <span class="inclusion-pill">All Genders Welcome</span>
+      <span class="inclusion-pill">All Age Groups</span>
+      <span class="inclusion-pill">All Professions</span>
+      <span class="inclusion-pill">No Prior Coding Needed</span>
+      <span class="inclusion-pill">10th Grade Minimum</span>
+      <span class="inclusion-pill">Questions Celebrated</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ FAQ ════════════════════ -->
+<section>
+  <div class="container" style="max-width:780px">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-title">Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>Do I need any prior programming experience?</h4>
+        <p>No. The course starts from absolute zero — including inventing your own number system. If you passed 10th grade, you have everything you need.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is this an online or offline course?</h4>
+        <p>The course is designed to be completed at your own pace with live sessions, instructor support, and a thriving peer community.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Who teaches the Machine Learning module?</h4>
+        <p>The ML section is delivered by IIT Professors, combining academic rigour with hands-on project work.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What does "invent your own algorithm" mean in practice?</h4>
+        <p>You'll receive a problem statement and constraints. Before seeing any standard solution, you design your own approach, code it, and defend it. Only then do you compare with established methods.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How long does the full program take?</h4>
+        <p>The depth of each module means this is a substantial commitment. Most students complete the program between 6 to 12 months depending on pace and prior background.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CTA ════════════════════ -->
+<section class="cta-section" id="enroll">
+  <div class="container">
+    <h2>Ready to become an inventor?</h2>
+    <p>Join a cohort of curious, fearless learners from every walk of life.</p>
+    <a class="btn-white" href="#">Enroll in The Inventor's Journey →</a>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer>
+  <p>© 2026 <a href="#">CloudxLab</a>. All rights reserved. &nbsp;·&nbsp;
+     <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+     <a href="#">Terms of Service</a>
+  </p>
+</footer>
+
+</body>
+</html>
