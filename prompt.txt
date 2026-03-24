@@ -3,9 +3,9 @@ Please suggest course title and design the course landing page for the following
 The opening chapter of the course is Designing your own number system. Everyone has to choose a base and write their counting upto three digits in that base. Then they have to do additions, subtractions and multiplication in that base. This chapters sets an example of the format of the course - the course is about learning by inventing. 
 
 The course starts with basics of Python. The learners have to solve the problems using Python. The core idea is to teach by inventing.
-The students learn the concepts by solving maths and algorithms problems using Python. The teaching of concepts is minimal. Instead, the problems statements are very simple in the begining and then the problem statements gradually become complex.
+The students learn the concepts by solving maths and algorithms problems using Python. The teaching of theory is minimal. Instead, the problems statements are very simple in the begining and then the problem statements gradually become complex.
 
-During Python chapter, people also learning interacting with LLMs, LLM Embeddings - Perform Sentiment Analysis and Semantic Search. Building AI Agents etc.
+During Python chapter, people also learn interacting with LLMs, LLM Embeddings - Perform Sentiment Analysis and Semantic Search. Building AI Agents etc.
 
 During the Python course, the students learn basics of maths, data structures (BST, queues, trees), algorithms (binary search, BFS, DFS, merge sort, quick sort), concepts of Python and some basic machine learning algorithms such as KNN, KMEANs, Naive bays. They also build their own decision trees and train it.
 
@@ -27,5 +27,12 @@ Key Hightlights:
     - Campus Immersion
     - IIT Roorkee Certificate
     - Timing: Weekends, Two classes each 2-3 hours
+    - Taught by 
+        Sandeep Giri (Founder of Terno AI - An AI Data Scientist Agent, AI/ML Researcher, worked at Amazon, Inmobi, D. E. Shaw, Founded tBits and KnowBigData, IIT Roorkee Graduate)
+        Professors from IITs 
+    - Projects: More than 30 project during course
+    - IIT Roorkee Campus Immersion
     
+
+
 

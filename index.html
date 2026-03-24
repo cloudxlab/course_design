@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Inventor's Journey — CloudxLab</title>
+  <title>The Inventor's Journey — CloudxLab × IIT Roorkee</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink:      #0d0f1a;
-      --white:    #ffffff;
-      --slate:    #64748b;
-      --light:    #f8fafc;
-      --border:   #e2e8f0;
-      --accent:   #6c3bff;
-      --accent2:  #ff5c35;
-      --accent3:  #00c2a8;
-      --grad:     linear-gradient(135deg, #6c3bff 0%, #a855f7 50%, #ec4899 100%);
-      --grad2:    linear-gradient(135deg, #0d0f1a 0%, #1e1b4b 100%);
+      --ink:    #0d0f1a;
+      --white:  #ffffff;
+      --slate:  #64748b;
+      --light:  #f8fafc;
+      --border: #e2e8f0;
+      --accent: #6c3bff;
+      --grad:   linear-gradient(135deg, #6c3bff 0%, #a855f7 50%, #ec4899 100%);
+      --grad2:  linear-gradient(135deg, #0d0f1a 0%, #1a1540 100%);
+      --iit:    #8B1A1A;
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', sans-serif;
       background: var(--white);
@@ -36,25 +34,32 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 2rem;
-      background: rgba(13,15,26,.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(13,15,26,.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
     }
+    .nav-left { display: flex; align-items: center; gap: 1rem; }
     .nav-logo { display: flex; align-items: center; gap: .5rem; text-decoration: none; }
     .nav-logo-badge {
       background: var(--grad); color: #fff;
-      font-size: .7rem; font-weight: 800; letter-spacing: .08em;
-      padding: .25rem .55rem; border-radius: 6px;
+      font-size: .68rem; font-weight: 800; letter-spacing: .08em;
+      padding: .22rem .5rem; border-radius: 5px;
     }
-    .nav-logo-text { color: #fff; font-size: 1.05rem; font-weight: 700; }
+    .nav-logo-text { color: #fff; font-size: 1rem; font-weight: 700; }
+    .nav-divider { width: 1px; height: 20px; background: rgba(255,255,255,.15); }
+    .nav-partner {
+      color: #94a3b8; font-size: .75rem; font-weight: 500;
+      letter-spacing: .05em;
+    }
+    .nav-partner strong { color: #fbbf24; font-weight: 700; }
     .nav-cta {
       background: var(--grad); color: #fff;
       border: none; border-radius: 8px;
-      padding: .55rem 1.4rem; font-size: .9rem; font-weight: 600;
+      padding: .55rem 1.4rem; font-size: .88rem; font-weight: 700;
       cursor: pointer; text-decoration: none;
-      transition: opacity .2s;
+      transition: opacity .2s, transform .2s;
     }
-    .nav-cta:hover { opacity: .85; }
+    .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
 
     /* ── HERO ── */
     .hero {
@@ -62,55 +67,75 @@
       background: var(--grad2);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center;
-      padding: 7rem 1.5rem 5rem;
+      padding: 8rem 1.5rem 5rem;
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(108,59,255,.25) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 60% at 80% 40%, rgba(236,72,153,.2) 0%, transparent 70%);
+        radial-gradient(ellipse 55% 55% at 15% 55%, rgba(108,59,255,.22) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 85% 35%, rgba(236,72,153,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 30% at 50% 90%, rgba(251,191,36,.08) 0%, transparent 70%);
       pointer-events: none;
     }
+    .hero-partner-badge {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.3);
+      color: #fbbf24; font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .4rem 1rem; border-radius: 100px;
+      margin-bottom: .75rem;
+    }
+    .hero-partner-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #fbbf24; }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: rgba(108,59,255,.2); border: 1px solid rgba(108,59,255,.4);
-      color: #c4b5fd; font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
-      padding: .4rem 1rem; border-radius: 100px;
+      background: rgba(108,59,255,.18); border: 1px solid rgba(108,59,255,.35);
+      color: #c4b5fd; font-size: .78rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; padding: .4rem 1rem; border-radius: 100px;
       margin-bottom: 1.5rem;
     }
-    .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: #a855f7; display: inline-block; }
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
       font-weight: 800; color: #fff;
-      line-height: 1.12;
-      max-width: 820px; margin: 0 auto .6rem;
+      line-height: 1.1; max-width: 860px; margin: 0 auto .5rem;
     }
     .hero h1 em {
       font-style: italic;
       background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
     .hero-subtitle {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: #94a3b8; max-width: 640px; margin: 0 auto 2.5rem;
-      font-weight: 400; line-height: 1.7;
+      font-size: clamp(.95rem, 1.8vw, 1.2rem);
+      color: #94a3b8; max-width: 620px; margin: .5rem auto 2rem;
+      font-weight: 400; line-height: 1.75;
     }
     .hero-subtitle strong { color: #e2e8f0; font-weight: 600; }
+
+    /* Quick-facts strip */
+    .hero-facts {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+      justify-content: center; margin-bottom: 2.5rem;
+    }
+    .hero-fact {
+      display: flex; align-items: center; gap: .4rem;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 100px; padding: .4rem 1rem;
+      color: #cbd5e1; font-size: .8rem; font-weight: 500;
+    }
+    .hero-fact .fi { font-size: .9rem; }
+
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 3.5rem; }
     .btn-primary {
       background: var(--grad); color: #fff;
-      padding: .9rem 2rem; border-radius: 10px;
+      padding: .95rem 2.2rem; border-radius: 10px;
       font-weight: 700; font-size: 1rem; text-decoration: none;
-      display: inline-flex; align-items: center; gap: .5rem;
-      box-shadow: 0 0 32px rgba(108,59,255,.45);
+      box-shadow: 0 0 36px rgba(108,59,255,.45);
       transition: transform .2s, box-shadow .2s;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 48px rgba(108,59,255,.6); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 52px rgba(108,59,255,.6); }
     .btn-secondary {
       background: transparent; color: #e2e8f0;
-      padding: .9rem 2rem; border-radius: 10px;
+      padding: .95rem 2.2rem; border-radius: 10px;
       font-weight: 600; font-size: 1rem; text-decoration: none;
       border: 1px solid rgba(255,255,255,.2);
       transition: border-color .2s, background .2s;
@@ -118,129 +143,204 @@
     .btn-secondary:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.05); }
 
     .hero-stats {
-      display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;
+      display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center;
     }
     .hero-stat { text-align: center; }
-    .hero-stat .num { font-size: 1.9rem; font-weight: 800; color: #fff; line-height: 1; }
-    .hero-stat .lbl { font-size: .75rem; color: #94a3b8; font-weight: 500; letter-spacing: .05em; margin-top: .2rem; }
+    .hero-stat .num { font-size: 2rem; font-weight: 800; color: #fff; line-height: 1; }
+    .hero-stat .lbl { font-size: .72rem; color: #94a3b8; font-weight: 500; letter-spacing: .05em; margin-top: .25rem; text-transform: uppercase; }
 
-    /* ── SECTION WRAPPER ── */
-    section { padding: 5rem 1.5rem; }
+    /* ── SHARED LAYOUT ── */
+    .section { padding: 5rem 1.5rem; }
+    .section-light { background: var(--light); }
+    .section-dark  { background: var(--grad2); }
     .container { max-width: 1100px; margin: 0 auto; }
+    .container-narrow { max-width: 780px; margin: 0 auto; }
     .section-tag {
-      font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .75rem;
+      font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .65rem;
     }
+    .section-tag-gold { color: #f59e0b; }
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800; line-height: 1.2;
-      margin-bottom: 1rem;
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 800; line-height: 1.2; margin-bottom: .9rem;
     }
-    .section-sub { color: var(--slate); font-size: 1.05rem; max-width: 600px; line-height: 1.7; }
+    .section-sub { color: var(--slate); font-size: 1rem; line-height: 1.75; }
 
-    /* ── TRANSFORMATION BANNER ── */
-    .transform-banner {
-      background: var(--grad2);
-      padding: 5rem 1.5rem;
-      text-align: center;
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: #fff; border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
     }
-    .transform-banner .section-tag { color: #a78bfa; }
-    .transform-banner .section-title { color: #fff; }
-    .transform-banner p { color: #94a3b8; font-size: 1.1rem; max-width: 680px; margin: 0 auto 2rem; line-height: 1.8; }
+    .trust-bar-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: center; gap: 2rem;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 600; color: var(--slate);
+    }
+    .trust-item .ti { font-size: 1.1rem; }
+    .trust-item strong { color: var(--ink); }
+
+    /* ── TRANSFORMATION ── */
     .transform-quote {
       font-family: 'Playfair Display', serif;
-      font-style: italic; font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-      color: #e2e8f0; max-width: 760px; margin: 2rem auto;
+      font-style: italic; font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+      color: #e2e8f0; max-width: 780px; margin: 2rem auto 0;
       border-left: 3px solid #a855f7; padding-left: 1.5rem; text-align: left;
+      line-height: 1.6;
     }
 
-    /* ── PHILOSOPHY CARDS ── */
-    .philosophy-grid {
+    /* ── INSTRUCTORS ── */
+    .instructors-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem; margin-top: 3rem;
     }
-    .phil-card {
-      background: var(--light); border: 1px solid var(--border);
-      border-radius: 16px; padding: 2rem;
+    .instructor-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 18px; padding: 2rem;
       transition: box-shadow .2s, transform .2s;
     }
-    .phil-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); transform: translateY(-3px); }
-    .phil-icon {
-      width: 48px; height: 48px; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; margin-bottom: 1rem;
+    .instructor-card:hover { box-shadow: 0 8px 36px rgba(0,0,0,.09); transform: translateY(-3px); }
+    .instructor-card.featured { border-color: #a855f7; box-shadow: 0 0 0 1px rgba(168,85,247,.3); }
+    .instructor-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--grad); display: flex; align-items: center;
+      justify-content: center; font-size: 1.8rem; margin-bottom: 1.25rem;
+      font-weight: 800; color: #fff;
     }
-    .phil-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .5rem; }
-    .phil-card p { color: var(--slate); font-size: .92rem; line-height: 1.65; }
+    .instructor-name { font-size: 1.1rem; font-weight: 800; margin-bottom: .25rem; }
+    .instructor-role {
+      font-size: .78rem; font-weight: 700; color: var(--accent);
+      text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem;
+    }
+    .instructor-bio { font-size: .88rem; color: var(--slate); line-height: 1.65; }
+    .instructor-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+    .i-tag {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 6px; padding: .2rem .6rem;
+      font-size: .72rem; font-weight: 600; color: var(--slate);
+    }
+
+    /* ── PROGRAM DETAILS ── */
+    .prog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .prog-card {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px; padding: 1.5rem;
+      text-align: center;
+    }
+    .prog-card .p-icon { font-size: 2rem; margin-bottom: .75rem; }
+    .prog-card .p-label { font-size: .72rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .3rem; }
+    .prog-card .p-value { font-size: 1.1rem; font-weight: 800; color: #fff; line-height: 1.3; }
+    .prog-card .p-sub { font-size: .78rem; color: #64748b; margin-top: .25rem; }
 
     /* ── CURRICULUM ── */
-    .curriculum { background: var(--light); }
-    .curriculum-grid {
-      display: grid; gap: 1rem; margin-top: 3rem;
-    }
+    .curriculum-grid { display: grid; gap: 1rem; margin-top: 3rem; }
     .module {
       background: #fff; border: 1px solid var(--border);
       border-radius: 14px; overflow: hidden;
     }
     .module-header {
       display: flex; align-items: center; gap: 1rem;
-      padding: 1.25rem 1.5rem; cursor: pointer;
-      transition: background .15s;
+      padding: 1.2rem 1.5rem;
     }
-    .module-header:hover { background: var(--light); }
     .module-num {
       width: 36px; height: 36px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: .8rem; font-weight: 800; color: #fff; flex-shrink: 0;
+      font-size: .78rem; font-weight: 800; color: #fff; flex-shrink: 0;
     }
-    .module-title { flex: 1; font-weight: 700; font-size: .97rem; }
+    .module-info { flex: 1; }
+    .module-title { font-weight: 700; font-size: .97rem; }
+    .module-meta { font-size: .75rem; color: var(--slate); margin-top: .1rem; }
     .module-badge {
-      font-size: .7rem; font-weight: 600; padding: .25rem .6rem;
-      border-radius: 6px; white-space: nowrap;
+      font-size: .68rem; font-weight: 700; padding: .22rem .6rem;
+      border-radius: 6px; white-space: nowrap; flex-shrink: 0;
     }
     .module-body {
-      padding: 0 1.5rem 1.25rem 3.75rem;
-      display: grid; gap: .5rem;
+      padding: 0 1.5rem 1.25rem 4rem;
+      display: grid; gap: .45rem;
     }
     .module-topic {
-      display: flex; align-items: flex-start; gap: .6rem;
-      font-size: .88rem; color: var(--slate); line-height: 1.5;
+      display: flex; align-items: flex-start; gap: .55rem;
+      font-size: .86rem; color: var(--slate); line-height: 1.5;
     }
     .module-topic::before {
       content: '→'; color: var(--accent); font-weight: 700;
       flex-shrink: 0; margin-top: .05rem;
     }
 
+    /* ── PHILOSOPHY ── */
+    .phil-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .phil-card {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.75rem;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .phil-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,.07); transform: translateY(-2px); }
+    .phil-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: .9rem;
+    }
+    .phil-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
+    .phil-card p { color: var(--slate); font-size: .88rem; line-height: 1.65; }
+
     /* ── HIGHLIGHTS ── */
     .highlights-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem; margin-top: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem; margin-top: 2.5rem;
     }
-    .highlight-card {
-      border-radius: 16px; padding: 2rem;
-      background: var(--ink); color: #fff;
-      position: relative; overflow: hidden;
+    .hl-card {
+      border-radius: 16px; padding: 1.75rem;
+      background: var(--ink); color: #fff; position: relative; overflow: hidden;
     }
-    .highlight-card::before {
+    .hl-card::before {
       content: ''; position: absolute; inset: 0;
-      background: var(--grad); opacity: .1; pointer-events: none;
+      background: var(--grad); opacity: .09; pointer-events: none;
     }
-    .highlight-card .hl-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .highlight-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
-    .highlight-card p { color: #94a3b8; font-size: .9rem; line-height: 1.65; }
+    .hl-card .hl-icon { font-size: 1.8rem; margin-bottom: .8rem; }
+    .hl-card h3 { font-size: .97rem; font-weight: 700; margin-bottom: .4rem; }
+    .hl-card p { color: #94a3b8; font-size: .87rem; line-height: 1.65; }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .proj-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.25rem;
+      display: flex; gap: .75rem; align-items: flex-start;
+    }
+    .proj-card .proj-icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .proj-card h4 { font-size: .88rem; font-weight: 700; margin-bottom: .2rem; }
+    .proj-card p { font-size: .78rem; color: var(--slate); line-height: 1.5; }
 
     /* ── CAREERS ── */
-    .careers { background: var(--light); }
     .careers-list {
       display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem;
     }
     .career-pill {
       background: #fff; border: 1px solid var(--border);
       border-radius: 100px; padding: .55rem 1.2rem;
-      font-size: .88rem; font-weight: 600; color: var(--ink);
+      font-size: .87rem; font-weight: 600; color: var(--ink);
       display: flex; align-items: center; gap: .4rem;
     }
     .career-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
@@ -248,82 +348,92 @@
     /* ── WHO ── */
     .who-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem; margin-top: 2.5rem;
     }
     .who-card {
-      text-align: center; padding: 2rem 1.5rem;
+      text-align: center; padding: 1.75rem 1.25rem;
       border-radius: 14px; border: 1px solid var(--border);
       transition: border-color .2s;
     }
     .who-card:hover { border-color: #a855f7; }
-    .who-card .who-icon { font-size: 2.2rem; margin-bottom: .75rem; }
-    .who-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: .4rem; }
-    .who-card p { font-size: .83rem; color: var(--slate); line-height: 1.5; }
+    .who-card .who-icon { font-size: 2rem; margin-bottom: .6rem; }
+    .who-card h4 { font-size: .93rem; font-weight: 700; margin-bottom: .35rem; }
+    .who-card p { font-size: .82rem; color: var(--slate); line-height: 1.5; }
 
     /* ── INCLUSION ── */
-    .inclusion {
-      background: var(--grad2);
-      text-align: center; padding: 5rem 1.5rem;
-    }
-    .inclusion .section-title { color: #fff; }
-    .inclusion p { color: #94a3b8; max-width: 700px; margin: 1rem auto 0; font-size: 1.05rem; line-height: 1.8; }
     .inclusion-pills {
-      display: flex; flex-wrap: wrap; gap: .75rem;
-      justify-content: center; margin-top: 2rem;
+      display: flex; flex-wrap: wrap; gap: .65rem; justify-content: center; margin-top: 2rem;
     }
     .inclusion-pill {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 100px; padding: .55rem 1.2rem;
-      color: #e2e8f0; font-size: .88rem; font-weight: 500;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+      border-radius: 100px; padding: .5rem 1.1rem;
+      color: #e2e8f0; font-size: .84rem; font-weight: 500;
+    }
+
+    /* ── CAMPUS ── */
+    .campus-section {
+      background: linear-gradient(135deg, #1a0a0a 0%, #2d1010 50%, #1a0a0a 100%);
+      padding: 5rem 1.5rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .campus-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(139,26,26,.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .campus-section .section-tag { color: #fbbf24; }
+    .campus-section .section-title { color: #fff; }
+    .campus-section p { color: #94a3b8; max-width: 640px; margin: 1rem auto 0; font-size: 1rem; line-height: 1.8; }
+    .campus-perks {
+      display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; margin-top: 2rem;
+    }
+    .campus-perk {
+      background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.25);
+      border-radius: 100px; padding: .5rem 1.1rem;
+      color: #fbbf24; font-size: .82rem; font-weight: 600;
+      display: flex; align-items: center; gap: .4rem;
     }
 
     /* ── FAQ ── */
     .faq-list { margin-top: 2.5rem; display: grid; gap: 1rem; }
     .faq-item {
-      border: 1px solid var(--border); border-radius: 12px;
-      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem;
     }
-    .faq-item h4 { font-size: .97rem; font-weight: 700; margin-bottom: .5rem; }
-    .faq-item p { color: var(--slate); font-size: .9rem; line-height: 1.65; }
+    .faq-item h4 { font-size: .95rem; font-weight: 700; margin-bottom: .45rem; }
+    .faq-item p { color: var(--slate); font-size: .88rem; line-height: 1.65; }
 
     /* ── CTA ── */
     .cta-section {
-      background: var(--grad);
-      text-align: center; padding: 6rem 1.5rem;
+      background: var(--grad); text-align: center; padding: 6rem 1.5rem;
     }
     .cta-section h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
       color: #fff; font-weight: 800; margin-bottom: 1rem;
     }
-    .cta-section p { color: rgba(255,255,255,.8); font-size: 1.05rem; margin-bottom: 2rem; }
+    .cta-section p { color: rgba(255,255,255,.82); font-size: 1rem; margin-bottom: 2rem; }
     .btn-white {
       background: #fff; color: var(--accent);
       padding: 1rem 2.5rem; border-radius: 10px;
-      font-weight: 800; font-size: 1.05rem; text-decoration: none;
+      font-weight: 800; font-size: 1rem; text-decoration: none;
       display: inline-block;
+      box-shadow: 0 4px 24px rgba(0,0,0,.22);
       transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 4px 24px rgba(0,0,0,.2);
     }
-    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.25); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.28); }
 
     /* ── FOOTER ── */
     footer {
       background: var(--ink); color: #64748b;
       text-align: center; padding: 2rem 1.5rem;
-      font-size: .85rem;
+      font-size: .83rem;
     }
     footer a { color: #94a3b8; text-decoration: none; }
     footer a:hover { color: #fff; }
 
-    /* ── UTILITIES ── */
-    .text-center { text-align: center; }
-    .mt-1 { margin-top: .5rem; }
-    .mt-2 { margin-top: 1rem; }
-
-    /* Colored accents for modules */
+    /* ── MODULE COLORS ── */
     .c-purple { background: #6c3bff; }
     .c-pink   { background: #ec4899; }
     .c-teal   { background: #00c2a8; }
@@ -332,7 +442,6 @@
     .c-amber  { background: #f59e0b; }
     .c-green  { background: #22c55e; }
     .c-rose   { background: #f43f5e; }
-
     .badge-purple { background: #ede9fe; color: #6c3bff; }
     .badge-pink   { background: #fce7f3; color: #be185d; }
     .badge-teal   { background: #ccfbf1; color: #0f766e; }
@@ -344,7 +453,7 @@
 
     @media (max-width: 640px) {
       nav { padding: .75rem 1rem; }
-      .hero-stats { gap: 1.25rem; }
+      .nav-partner { display: none; }
       .module-body { padding-left: 1.5rem; }
     }
   </style>
@@ -353,226 +462,360 @@
 
 <!-- ════════════════════ NAV ════════════════════ -->
 <nav>
-  <a class="nav-logo" href="#">
-    <span class="nav-logo-badge">CxL</span>
-    <span class="nav-logo-text">CloudxLab</span>
-  </a>
+  <div class="nav-left">
+    <a class="nav-logo" href="#">
+      <span class="nav-logo-badge">CxL</span>
+      <span class="nav-logo-text">CloudxLab</span>
+    </a>
+    <div class="nav-divider"></div>
+    <span class="nav-partner">In partnership with <strong>IIT Roorkee</strong></span>
+  </div>
   <a class="nav-cta" href="#enroll">Enroll Now</a>
 </nav>
 
 <!-- ════════════════════ HERO ════════════════════ -->
 <section class="hero">
-  <div class="hero-eyebrow">
-    <span></span> CloudxLab Flagship Program
+  <div class="hero-partner-badge">
+    <span class="dot"></span> CloudxLab × IIT Roorkee Certificate Program
   </div>
+  <div class="hero-eyebrow">Flagship Cohort Program</div>
+
   <h1>The <em>Inventor's Journey</em><br>From First Principles to AI</h1>
+
   <p class="hero-subtitle">
     Stop memorising formulas. Start <strong>inventing</strong>.<br>
-    A ground-up program where you build your own number systems, algorithms,
-    ML models, and neural networks — then understand <em>why</em> they work.
+    Build your own number systems, algorithms, ML models, and neural networks —
+    then understand <em>why</em> they work. Taught by an IIT Roorkee alumnus and IIT Professors.
   </p>
+
+  <div class="hero-facts">
+    <div class="hero-fact"><span class="fi">📅</span> 8 Months</div>
+    <div class="hero-fact"><span class="fi">🕐</span> Weekends · 2 × 2–3 hr sessions</div>
+    <div class="hero-fact"><span class="fi">🏛️</span> IIT Roorkee Campus Immersion</div>
+    <div class="hero-fact"><span class="fi">📜</span> IIT Roorkee Certificate</div>
+    <div class="hero-fact"><span class="fi">🧪</span> 30+ Projects</div>
+    <div class="hero-fact"><span class="fi">🎓</span> 10th Grade Onwards</div>
+  </div>
+
   <div class="hero-actions">
-    <a class="btn-primary" href="#enroll">
-      ✦ Start Your Journey
-    </a>
+    <a class="btn-primary" href="#enroll">✦ Apply for Next Cohort</a>
     <a class="btn-secondary" href="#curriculum">Explore Curriculum</a>
   </div>
+
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="num">8</div>
       <div class="lbl">Deep Modules</div>
     </div>
     <div class="hero-stat">
-      <div class="num">200+</div>
-      <div class="lbl">Hands-on Problems</div>
+      <div class="num">30+</div>
+      <div class="lbl">Projects</div>
     </div>
     <div class="hero-stat">
       <div class="num">IIT</div>
-      <div class="lbl">Faculty for ML</div>
+      <div class="lbl">Roorkee Cert.</div>
     </div>
     <div class="hero-stat">
-      <div class="num">10th</div>
-      <div class="lbl">Grade Onwards</div>
+      <div class="num">8mo</div>
+      <div class="lbl">Weekend Pace</div>
     </div>
     <div class="hero-stat">
-      <div class="num">6</div>
+      <div class="num">6+</div>
       <div class="lbl">Career Paths</div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════ TRANSFORMATION BANNER ════════════════════ -->
-<div class="transform-banner">
-  <div class="container">
-    <div class="section-tag">Our Promise</div>
+<!-- ════════════════════ TRUST BAR ════════════════════ -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span class="ti">🏛️</span> <strong>IIT Roorkee</strong> Certificate</div>
+    <div class="trust-item"><span class="ti">🎯</span> <strong>First-Principle</strong> Learning</div>
+    <div class="trust-item"><span class="ti">🤖</span> <strong>AI Agents</strong> & LLMs Included</div>
+    <div class="trust-item"><span class="ti">🧪</span> <strong>30+</strong> Hands-on Projects</div>
+    <div class="trust-item"><span class="ti">📅</span> <strong>Weekend</strong> Schedule</div>
+    <div class="trust-item"><span class="ti">✈️</span> Campus <strong>Immersion</strong></div>
+  </div>
+</div>
+
+<!-- ════════════════════ TRANSFORMATION ════════════════════ -->
+<section class="section section-dark">
+  <div class="container" style="text-align:center">
+    <div class="section-tag" style="color:#a78bfa">Our Promise</div>
     <h2 class="section-title" style="color:#fff">This is not a course.<br>It is a transformation.</h2>
-    <p>
-      Most programs hand you recipes. We hand you problems — then step back.
-      By the time you finish, you won't just know how to use algorithms;
-      you will know <em>why</em> they exist, because you invented your own versions of them first.
+    <p style="color:#94a3b8; font-size:1.05rem; max-width:680px; margin:0 auto; line-height:1.85;">
+      Most programs hand you recipes. We hand you problems — and step back.
+      By the time you finish, you won't just know how algorithms work;
+      you will know <em style="color:#e2e8f0">why</em> they exist, because you invented your own versions of them first.
     </p>
     <blockquote class="transform-quote">
       "The aim is not to make you a coder. It is to change the way you see yourself —
       from someone who chases formulas to a first-principle thinker who is fearless in front of any problem."
     </blockquote>
   </div>
-</div>
+</section>
+
+<!-- ════════════════════ PROGRAM DETAILS ════════════════════ -->
+<section class="section section-dark" style="padding-top:0">
+  <div class="container">
+    <div class="prog-grid">
+      <div class="prog-card">
+        <div class="p-icon">📅</div>
+        <div class="p-label">Duration</div>
+        <div class="p-value">8 Months</div>
+        <div class="p-sub">Designed for working professionals</div>
+      </div>
+      <div class="prog-card">
+        <div class="p-icon">🕐</div>
+        <div class="p-label">Schedule</div>
+        <div class="p-value">Weekends</div>
+        <div class="p-sub">2 sessions/week · 2–3 hrs each</div>
+      </div>
+      <div class="prog-card">
+        <div class="p-icon">📜</div>
+        <div class="p-label">Certificate</div>
+        <div class="p-value">IIT Roorkee</div>
+        <div class="p-sub">Recognised across industry</div>
+      </div>
+      <div class="prog-card">
+        <div class="p-icon">🏛️</div>
+        <div class="p-label">Campus</div>
+        <div class="p-value">IIT Roorkee</div>
+        <div class="p-sub">On-campus immersion included</div>
+      </div>
+      <div class="prog-card">
+        <div class="p-icon">🧪</div>
+        <div class="p-label">Projects</div>
+        <div class="p-value">30+</div>
+        <div class="p-sub">One per topic, you invent your own</div>
+      </div>
+      <div class="prog-card">
+        <div class="p-icon">🎓</div>
+        <div class="p-label">Eligibility</div>
+        <div class="p-value">10th Grade+</div>
+        <div class="p-sub">No prior coding needed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ INSTRUCTORS ════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag">Your Instructors</div>
+    <h2 class="section-title">Learn from practitioners & researchers</h2>
+    <p class="section-sub">World-class faculty who have built real systems — and know how to teach you to build yours.</p>
+    <div class="instructors-grid">
+
+      <div class="instructor-card featured">
+        <div class="instructor-avatar">SG</div>
+        <div class="instructor-name">Sandeep Giri</div>
+        <div class="instructor-role">Lead Instructor · Course Creator</div>
+        <p class="instructor-bio">
+          Founder of <strong>Terno AI</strong> — an AI Data Scientist Agent. AI/ML Researcher with industry experience at
+          <strong>Amazon</strong>, <strong>InMobi</strong>, and <strong>D.E. Shaw</strong>. Founded tBits and KnowBigData.
+          Graduate of <strong>IIT Roorkee</strong>. Passionate about teaching through first principles and invention.
+        </p>
+        <div class="instructor-tags">
+          <span class="i-tag">IIT Roorkee Alumni</span>
+          <span class="i-tag">Amazon</span>
+          <span class="i-tag">D.E. Shaw</span>
+          <span class="i-tag">InMobi</span>
+          <span class="i-tag">AI/ML Research</span>
+          <span class="i-tag">Founder, Terno AI</span>
+        </div>
+      </div>
+
+      <div class="instructor-card">
+        <div class="instructor-avatar" style="background:linear-gradient(135deg,#8B1A1A,#c0392b)">IIT</div>
+        <div class="instructor-name">IIT Professors</div>
+        <div class="instructor-role">Machine Learning Module · Guest Faculty</div>
+        <p class="instructor-bio">
+          The Machine Learning section is delivered by <strong>Professors from IITs</strong> — combining
+          academic rigour with real-world application. Expect deep theoretical grounding paired with
+          hands-on projects where you invent your own algorithm variants.
+        </p>
+        <div class="instructor-tags">
+          <span class="i-tag">IIT Faculty</span>
+          <span class="i-tag">ML Theory</span>
+          <span class="i-tag">Research-Grade Depth</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ════════════════════ PHILOSOPHY ════════════════════ -->
-<section>
+<section class="section section-light">
   <div class="container">
     <div class="section-tag">Learning Philosophy</div>
     <h2 class="section-title">Why "Invent to Learn" works</h2>
-    <p class="section-sub">Struggling with a problem you designed yourself creates understanding that no lecture can replicate.</p>
-    <div class="philosophy-grid">
+    <p class="section-sub">Struggling with a problem you designed yourself creates understanding no lecture ever can.</p>
+    <div class="phil-grid">
       <div class="phil-card">
         <div class="phil-icon" style="background:#ede9fe">🔢</div>
         <h3>Start with your own number system</h3>
-        <p>Day one, you design your own base system and do arithmetic in it. This single exercise rewires how you think about abstraction forever.</p>
+        <p>Day one, you design your own base and do arithmetic in it. This single exercise rewires how you think about abstraction — forever.</p>
       </div>
       <div class="phil-card">
         <div class="phil-icon" style="background:#fce7f3">🧪</div>
         <h3>Problems before explanations</h3>
-        <p>Simple problem statements gradually grow in complexity. Concepts are introduced only once you've felt the need for them — making them stick.</p>
+        <p>Simple problem statements gradually grow in complexity. Theory is introduced only once you've felt the need for it — making it stick.</p>
       </div>
       <div class="phil-card">
-        <div class="phil-icon" style="background:#ccfbf1">🤖</div>
+        <div class="phil-icon" style="background:#ccfbf1">⚙️</div>
         <h3>Invent your own algorithms</h3>
-        <p>You'll build your own decision tree, your own gradient descent, your own KNN — before you ever read about the "standard" version.</p>
+        <p>You'll build your own decision tree, gradient descent, KNN, and neural network — before ever reading a textbook definition.</p>
       </div>
       <div class="phil-card">
         <div class="phil-icon" style="background:#fff7ed">🙋</div>
         <h3>Questions are celebrated</h3>
-        <p>Curiosity is the curriculum. There are no dumb questions. You'll learn to enjoy — even celebrate — the questions posed by your classmates.</p>
+        <p>Curiosity is the curriculum. There are no dumb questions. You'll learn to enjoy — even celebrate — questions from classmates.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════ CURRICULUM ════════════════════ -->
-<section class="curriculum" id="curriculum">
+<section class="section" id="curriculum">
   <div class="container">
     <div class="section-tag">What You'll Build</div>
-    <h2 class="section-title">Full Curriculum</h2>
-    <p class="section-sub">Eight progressively deep modules. Each one asks you to invent, not just follow.</p>
+    <h2 class="section-title">Full Curriculum — 8 Modules</h2>
+    <p class="section-sub">Every module ends with projects you invented, not copied.</p>
 
     <div class="curriculum-grid">
 
-      <!-- MODULE 0 -->
       <div class="module">
         <div class="module-header">
           <div class="module-num c-purple">0</div>
-          <div class="module-title">Designing Your Own Number System</div>
+          <div class="module-info">
+            <div class="module-title">Designing Your Own Number System</div>
+            <div class="module-meta">Prologue · Sets the tone for the entire journey</div>
+          </div>
           <span class="module-badge badge-purple">Prologue</span>
         </div>
         <div class="module-body">
-          <div class="module-topic">Choose your own base and write counting up to three digits in it</div>
-          <div class="module-topic">Perform addition, subtraction, and multiplication in your base</div>
-          <div class="module-topic">Understand why positional notation is a profound invention</div>
-          <div class="module-topic">Sets the tone: you are an inventor, not a consumer of knowledge</div>
+          <div class="module-topic">Choose your own base; write and count up to three digits in it</div>
+          <div class="module-topic">Perform addition, subtraction, and multiplication in your chosen base</div>
+          <div class="module-topic">Understand why positional notation is a profound human invention</div>
+          <div class="module-topic">First taste: you are an inventor, not a consumer of knowledge</div>
         </div>
       </div>
 
-      <!-- MODULE 1 -->
       <div class="module">
         <div class="module-header">
           <div class="module-num c-pink">1</div>
-          <div class="module-title">Python by Invention</div>
+          <div class="module-info">
+            <div class="module-title">Python by Invention</div>
+            <div class="module-meta">Python · Maths · DSA · Basic ML · AI Agents</div>
+          </div>
           <span class="module-badge badge-pink">Foundation</span>
         </div>
         <div class="module-body">
-          <div class="module-topic">Python fundamentals learned by solving progressively harder math problems</div>
-          <div class="module-topic">Data structures you'll build yourself: BSTs, queues, trees</div>
+          <div class="module-topic">Python fundamentals through progressively harder maths problems</div>
+          <div class="module-topic">Data structures you build yourself: BSTs, queues, trees</div>
           <div class="module-topic">Algorithms from scratch: binary search, BFS, DFS, merge sort, quicksort</div>
           <div class="module-topic">Build and train your own KNN, K-Means, Naïve Bayes, and Decision Tree</div>
-          <div class="module-topic">Interact with LLMs, perform Sentiment Analysis with embeddings</div>
+          <div class="module-topic">Interact with LLMs; perform Sentiment Analysis with LLM Embeddings</div>
           <div class="module-topic">Semantic search and building your first AI Agent</div>
         </div>
       </div>
 
-      <!-- MODULE 2 -->
       <div class="module">
         <div class="module-header">
           <div class="module-num c-teal">2</div>
-          <div class="module-title">Scientific Python & Data Wrangling</div>
+          <div class="module-info">
+            <div class="module-title">Scientific Python & Data Wrangling</div>
+            <div class="module-meta">NumPy · Pandas · Matplotlib · Projects</div>
+          </div>
           <span class="module-badge badge-teal">Tools</span>
         </div>
         <div class="module-body">
-          <div class="module-topic">NumPy, Pandas, and Matplotlib — learned by doing, not reading docs</div>
+          <div class="module-topic">NumPy, Pandas, Matplotlib — learned by building, not reading docs</div>
           <div class="module-topic">Build a recommendation engine from first principles</div>
           <div class="module-topic">Image manipulation and pixel-level operations</div>
           <div class="module-topic">Implement your own Linear Regression with your own Gradient Descent</div>
         </div>
       </div>
 
-      <!-- MODULE 3 -->
       <div class="module">
         <div class="module-header">
           <div class="module-num c-orange">3</div>
-          <div class="module-title">Machine Learning — End to End</div>
+          <div class="module-info">
+            <div class="module-title">Machine Learning — End to End</div>
+            <div class="module-meta">Delivered by IIT Professors · Invent your own algorithm</div>
+          </div>
           <span class="module-badge badge-orange">IIT Faculty</span>
         </div>
         <div class="module-body">
           <div class="module-topic">Complete end-to-end ML project: data → model → evaluation → deployment</div>
           <div class="module-topic">Linear Regression and Logistic Regression — derive and implement</div>
           <div class="module-topic">Decision Trees and Ensemble Learning (Bagging, Boosting, Random Forest)</div>
-          <div class="module-topic">Unsupervised Learning: Clustering, Dimensionality Reduction</div>
-          <div class="module-topic">Everyone invents their own variant of a classical algorithm as a project</div>
-          <div class="module-topic">Delivered by IIT Professors</div>
+          <div class="module-topic">Unsupervised Learning: Clustering and Dimensionality Reduction</div>
+          <div class="module-topic">Everyone invents their own variant of a classical algorithm as capstone</div>
         </div>
       </div>
 
-      <!-- MODULE 4 -->
       <div class="module">
         <div class="module-header">
           <div class="module-num c-blue">4</div>
-          <div class="module-title">Deep Learning — Foundations & ANNs</div>
+          <div class="module-info">
+            <div class="module-title">Deep Learning — Foundations & ANNs</div>
+            <div class="module-meta">Build an ANN from scratch in NumPy</div>
+          </div>
           <span class="module-badge badge-blue">Deep Learning</span>
         </div>
         <div class="module-body">
-          <div class="module-topic">Introduction to Artificial Neural Networks — build one from scratch in NumPy</div>
+          <div class="module-topic">Introduction to Artificial Neural Networks — implement one from scratch</div>
           <div class="module-topic">Training nitty-gritties: backpropagation, vanishing gradients, optimisers</div>
-          <div class="module-topic">Implement your own idea as a mini-project within this module</div>
+          <div class="module-topic">Implement your own architectural idea as a mini-project</div>
         </div>
       </div>
 
-      <!-- MODULE 5 -->
       <div class="module">
         <div class="module-header">
           <div class="module-num c-amber">5</div>
-          <div class="module-title">Sequence Models & Attention</div>
+          <div class="module-info">
+            <div class="module-title">Sequence Models & Attention</div>
+            <div class="module-meta">RNN · LSTM · Attention · Autoencoders</div>
+          </div>
           <span class="module-badge badge-amber">Deep Learning</span>
         </div>
         <div class="module-body">
           <div class="module-topic">Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM)</div>
-          <div class="module-topic">Attention mechanisms — understanding the foundation of Transformers</div>
+          <div class="module-topic">Attention mechanisms — the foundation of Transformers, demystified</div>
           <div class="module-topic">Autoencoders for representation learning and generation</div>
         </div>
       </div>
 
-      <!-- MODULE 6 -->
       <div class="module">
         <div class="module-header">
           <div class="module-num c-green">6</div>
-          <div class="module-title">Convolutional Neural Networks</div>
+          <div class="module-info">
+            <div class="module-title">Convolutional Neural Networks</div>
+            <div class="module-meta">Derive convolutions · Design your own architecture</div>
+          </div>
           <span class="module-badge badge-green">Deep Learning</span>
         </div>
         <div class="module-body">
-          <div class="module-topic">Convolutions — derive from the math, implement, and experiment</div>
-          <div class="module-topic">CNNs for image classification, object detection</div>
-          <div class="module-topic">Build your own architecture and explain every design decision</div>
+          <div class="module-topic">Convolutions — derive from first principles, implement, and experiment</div>
+          <div class="module-topic">CNNs for image classification and object detection</div>
+          <div class="module-topic">Design your own CNN architecture and defend every decision</div>
         </div>
       </div>
 
-      <!-- MODULE 7 -->
       <div class="module">
         <div class="module-header">
           <div class="module-num c-rose">7</div>
-          <div class="module-title">Reinforcement Learning</div>
+          <div class="module-info">
+            <div class="module-title">Reinforcement Learning</div>
+            <div class="module-meta">Design your own environment · Train your own agent</div>
+          </div>
           <span class="module-badge badge-rose">Advanced</span>
         </div>
         <div class="module-body">
-          <div class="module-topic">Markov Decision Processes, policies, rewards</div>
+          <div class="module-topic">Markov Decision Processes, policies, and reward shaping</div>
           <div class="module-topic">Q-Learning and Deep Q-Networks from scratch</div>
           <div class="module-topic">Design your own environment and train an agent on it</div>
         </div>
@@ -582,52 +825,170 @@
   </div>
 </section>
 
+<!-- ════════════════════ PROJECTS ════════════════════ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-tag">30+ Projects</div>
+    <h2 class="section-title">Build things that actually work</h2>
+    <p class="section-sub">Every module includes hands-on projects. Here's a taste of what you'll invent.</p>
+    <div class="projects-grid">
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#ede9fe">🔢</div>
+        <div>
+          <h4>Custom Number System</h4>
+          <p>Arithmetic in a base you designed</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#fce7f3">🌳</div>
+        <div>
+          <h4>Decision Tree from Scratch</h4>
+          <p>Build, train and visualise it in Python</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#ccfbf1">🤖</div>
+        <div>
+          <h4>AI Agent</h4>
+          <p>Your own agent using LLM APIs</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#fff7ed">🔍</div>
+        <div>
+          <h4>Semantic Search Engine</h4>
+          <p>LLM embeddings + similarity search</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#dbeafe">🎬</div>
+        <div>
+          <h4>Recommendation Engine</h4>
+          <p>Built on NumPy from first principles</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#dcfce7">📉</div>
+        <div>
+          <h4>Gradient Descent</h4>
+          <p>Your own implementation of linear regression training</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#fef3c7">🧠</div>
+        <div>
+          <h4>Neural Network in NumPy</h4>
+          <p>Forward pass, backprop, training loop</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#ffe4e6">🎮</div>
+        <div>
+          <h4>RL Agent</h4>
+          <p>Custom environment + trained DQN agent</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#f0fdf4">🖼️</div>
+        <div>
+          <h4>Image Manipulation</h4>
+          <p>CNN-powered feature extraction</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#faf5ff">⚗️</div>
+        <div>
+          <h4>Your Own ML Algorithm</h4>
+          <p>Invent a variant during the IIT ML module</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#fff1f2">💬</div>
+        <div>
+          <h4>Sentiment Analyser</h4>
+          <p>LLM embeddings + classifier you built</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon" style="background:#ecfdf5">🔀</div>
+        <div>
+          <h4>Sort & Search Visualiser</h4>
+          <p>Animate the algorithms you coded</p>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center; color:var(--slate); margin-top:1.5rem; font-size:.9rem;">
+      + 18 more projects across all modules
+    </p>
+  </div>
+</section>
+
 <!-- ════════════════════ HIGHLIGHTS ════════════════════ -->
-<section>
+<section class="section">
   <div class="container">
     <div class="section-tag">Key Highlights</div>
-    <h2 class="section-title">What makes this different</h2>
+    <h2 class="section-title">What sets this program apart</h2>
     <div class="highlights-grid">
-      <div class="highlight-card">
+      <div class="hl-card">
         <div class="hl-icon">🔬</div>
         <h3>Learn by Inventing</h3>
-        <p>Every concept is discovered through structured problem-solving, not lecture slides. You build before you read.</p>
+        <p>Every concept is discovered through structured problem-solving. You build before you read — always.</p>
       </div>
-      <div class="highlight-card">
-        <div class="hl-icon">🎓</div>
+      <div class="hl-card">
+        <div class="hl-icon">🏛️</div>
+        <h3>IIT Roorkee Certificate & Campus Immersion</h3>
+        <p>Earn a recognised certificate and experience an on-campus immersion at IIT Roorkee.</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">👨‍🏫</div>
         <h3>IIT Faculty for ML</h3>
-        <p>The Machine Learning module is delivered by IIT Professors — world-class rigour meets real-world application.</p>
+        <p>The Machine Learning module is taught by IIT Professors — academic rigour meets real-world depth.</p>
       </div>
-      <div class="highlight-card">
+      <div class="hl-card">
         <div class="hl-icon">💼</div>
-        <h3>Interview-Ready Graduates</h3>
-        <p>Crack interviews at top companies for SDE, Data Scientist, ML Engineer, AI Engineer, ML Researcher roles.</p>
+        <h3>Interview-Ready</h3>
+        <p>Crack interviews for SDE, Data Scientist, ML Engineer, AI Engineer, ML Researcher, and ML Scientist roles.</p>
       </div>
-      <div class="highlight-card">
+      <div class="hl-card">
         <div class="hl-icon">🤖</div>
         <h3>AI & LLM Native</h3>
-        <p>Build AI Agents, perform semantic search and sentiment analysis with LLM embeddings — from within the Python module.</p>
+        <p>Build AI Agents, run semantic search, perform sentiment analysis with LLM embeddings — from Module 1.</p>
       </div>
-      <div class="highlight-card">
+      <div class="hl-card">
         <div class="hl-icon">🧠</div>
         <h3>First-Principle Thinking</h3>
-        <p>The real outcome isn't a certificate — it's the ability to look at any hard problem and know you can figure it out.</p>
-      </div>
-      <div class="highlight-card">
-        <div class="hl-icon">🌍</div>
-        <h3>A Diverse Classroom</h3>
-        <p>Students from every walk of life, profession, and age group. Leave your mental blocks at the door.</p>
+        <p>The real outcome is the ability to face any hard problem and know you can figure it out — from scratch.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ════════════════════ CAMPUS IMMERSION ════════════════════ -->
+<div class="campus-section">
+  <div class="container" style="position:relative">
+    <div class="section-tag section-tag-gold">IIT Roorkee Campus</div>
+    <h2 class="section-title">Step onto one of India's greatest campuses</h2>
+    <p>
+      As part of this program, you'll experience a campus immersion at <strong style="color:#fbbf24">IIT Roorkee</strong> —
+      India's oldest technical institution. Learn alongside peers, interact with faculty,
+      and graduate with a certificate that carries real weight.
+    </p>
+    <div class="campus-perks">
+      <span class="campus-perk">🏛️ IIT Roorkee Campus Visit</span>
+      <span class="campus-perk">📜 Official Certificate</span>
+      <span class="campus-perk">👨‍🏫 Face Time with IIT Professors</span>
+      <span class="campus-perk">🤝 Network with Cohort Peers</span>
+      <span class="campus-perk">🎓 Graduation Ceremony</span>
+    </div>
+  </div>
+</div>
+
 <!-- ════════════════════ CAREERS ════════════════════ -->
-<section class="careers">
+<section class="section section-light">
   <div class="container">
     <div class="section-tag">Career Outcomes</div>
     <h2 class="section-title">Roles you'll be ready for</h2>
-    <p class="section-sub">This program prepares you to compete for the most sought-after technical roles in the industry.</p>
+    <p class="section-sub">This program builds the depth to compete for the most sought-after technical roles.</p>
     <div class="careers-list">
       <div class="career-pill"><span class="dot"></span> Software Development Engineer (SDE)</div>
       <div class="career-pill"><span class="dot"></span> Data Scientist</div>
@@ -640,45 +1001,45 @@
 </section>
 
 <!-- ════════════════════ WHO IS THIS FOR ════════════════════ -->
-<section>
+<section class="section">
   <div class="container">
     <div class="section-tag">Who Should Join</div>
-    <h2 class="section-title">Anyone with curiosity and 10th grade behind them</h2>
+    <h2 class="section-title">Anyone with curiosity and 10th grade</h2>
     <div class="who-grid">
       <div class="who-card">
         <div class="who-icon">🎒</div>
         <h4>Students</h4>
-        <p>From high-school to college. Build the foundation that universities rarely teach.</p>
+        <p>High-school to college. Build the foundation most universities skip.</p>
       </div>
       <div class="who-card">
         <div class="who-icon">💻</div>
         <h4>Working Professionals</h4>
-        <p>Pivot into AI/ML or deepen your technical edge without leaving your job.</p>
+        <p>Pivot into AI/ML or sharpen your technical edge. Weekend schedule fits your life.</p>
       </div>
       <div class="who-card">
         <div class="who-icon">🔄</div>
         <h4>Career Changers</h4>
-        <p>From any field. If you can think, you can learn to invent here.</p>
+        <p>From any background. If you can think, you can learn to invent here.</p>
       </div>
       <div class="who-card">
         <div class="who-icon">🧩</div>
         <h4>Curious Minds</h4>
-        <p>You don't need to know why yet — you just need the itch to figure things out.</p>
+        <p>You just need the itch to understand how things work — the rest follows.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════ INCLUSION ════════════════════ -->
-<div class="inclusion">
-  <div class="container">
-    <div class="section-tag" style="color:#a78bfa">Our Classroom Culture</div>
-    <h2 class="section-title">Everyone belongs here</h2>
-    <p>
+<section class="section section-dark">
+  <div class="container" style="text-align:center">
+    <div class="section-tag" style="color:#a78bfa">Classroom Culture</div>
+    <h2 class="section-title" style="color:#fff">Everyone belongs here</h2>
+    <p style="color:#94a3b8; max-width:700px; margin:0 auto; font-size:1rem; line-height:1.85;">
       You will find people from various walks of life and various age groups in this class.
-      We ask you to leave mental blocks — around gender, profession, or age — outside the door.
-      Be fearless while asking questions. Learn to enjoy the questions asked by others.
-      This is a space where no question is too basic, and no curiosity is too ambitious.
+      Leave mental blocks around gender, profession, and age at the door.
+      Be fearless while asking questions. Learn to enjoy — even celebrate — questions from others.
+      No question is too basic. No curiosity is too ambitious.
     </p>
     <div class="inclusion-pills">
       <span class="inclusion-pill">All Genders Welcome</span>
@@ -689,33 +1050,37 @@
       <span class="inclusion-pill">Questions Celebrated</span>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ════════════════════ FAQ ════════════════════ -->
-<section>
-  <div class="container" style="max-width:780px">
+<section class="section section-light">
+  <div class="container-narrow">
     <div class="section-tag">FAQ</div>
     <h2 class="section-title">Common questions</h2>
     <div class="faq-list">
       <div class="faq-item">
         <h4>Do I need any prior programming experience?</h4>
-        <p>No. The course starts from absolute zero — including inventing your own number system. If you passed 10th grade, you have everything you need.</p>
+        <p>No. The course starts from absolute zero — including designing your own number system. If you completed 10th grade, you have everything you need.</p>
       </div>
       <div class="faq-item">
-        <h4>Is this an online or offline course?</h4>
-        <p>The course is designed to be completed at your own pace with live sessions, instructor support, and a thriving peer community.</p>
+        <h4>What is the schedule like?</h4>
+        <p>Classes run on weekends — two sessions per week, each 2 to 3 hours. The 8-month timeline is designed to fit around a full-time job or studies.</p>
       </div>
       <div class="faq-item">
-        <h4>Who teaches the Machine Learning module?</h4>
-        <p>The ML section is delivered by IIT Professors, combining academic rigour with hands-on project work.</p>
+        <h4>What does the IIT Roorkee Certificate mean?</h4>
+        <p>On successful completion, you receive an official certificate from IIT Roorkee — one of India's premier technical institutions — along with an on-campus immersion experience.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Who teaches this course?</h4>
+        <p>The core program is led by Sandeep Giri (IIT Roorkee alumnus, founder of Terno AI, ex-Amazon, InMobi, D.E. Shaw). The Machine Learning module is delivered by IIT Professors.</p>
       </div>
       <div class="faq-item">
         <h4>What does "invent your own algorithm" mean in practice?</h4>
-        <p>You'll receive a problem statement and constraints. Before seeing any standard solution, you design your own approach, code it, and defend it. Only then do you compare with established methods.</p>
+        <p>You receive a problem statement and constraints. Before seeing any standard solution, you design your own approach, code it, and defend it — then compare with established methods.</p>
       </div>
       <div class="faq-item">
-        <h4>How long does the full program take?</h4>
-        <p>The depth of each module means this is a substantial commitment. Most students complete the program between 6 to 12 months depending on pace and prior background.</p>
+        <h4>How many projects will I complete?</h4>
+        <p>More than 30 projects across all 8 modules — one or more per topic, ranging from a custom number system to your own RL agent. Every project is something you invented, not copied.</p>
       </div>
     </div>
   </div>
@@ -723,18 +1088,19 @@
 
 <!-- ════════════════════ CTA ════════════════════ -->
 <section class="cta-section" id="enroll">
-  <div class="container">
+  <div class="container" style="text-align:center">
     <h2>Ready to become an inventor?</h2>
-    <p>Join a cohort of curious, fearless learners from every walk of life.</p>
-    <a class="btn-white" href="#">Enroll in The Inventor's Journey →</a>
+    <p>8 months. Weekends. IIT Roorkee certificate. 30+ projects. A changed perspective.</p>
+    <a class="btn-white" href="#">Apply for the Next Cohort →</a>
   </div>
 </section>
 
 <!-- ════════════════════ FOOTER ════════════════════ -->
 <footer>
-  <p>© 2026 <a href="#">CloudxLab</a>. All rights reserved. &nbsp;·&nbsp;
+  <p>© 2026 <a href="#">CloudxLab</a> · In partnership with IIT Roorkee &nbsp;·&nbsp;
      <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
-     <a href="#">Terms of Service</a>
+     <a href="#">Terms of Service</a> &nbsp;·&nbsp;
+     <a href="#">Contact</a>
   </p>
 </footer>
 
