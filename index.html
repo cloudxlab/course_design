@@ -64,7 +64,9 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background: var(--grad2);
+      background:
+        linear-gradient(135deg, rgba(13,15,26,.91) 0%, rgba(26,21,64,.87) 100%),
+        url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1600&q=80') center/cover no-repeat;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center;
       padding: 8rem 1.5rem 5rem;
@@ -74,8 +76,8 @@
       content: '';
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 55% 55% at 15% 55%, rgba(108,59,255,.22) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 60% at 85% 35%, rgba(236,72,153,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 55% 55% at 15% 55%, rgba(108,59,255,.28) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 85% 35%, rgba(236,72,153,.22) 0%, transparent 70%),
         radial-gradient(ellipse 30% 30% at 50% 90%, rgba(251,191,36,.08) 0%, transparent 70%);
       pointer-events: none;
     }
@@ -194,6 +196,23 @@
     }
 
     /* ── INSTRUCTORS ── */
+    .instructors-banner {
+      border-radius: 18px; overflow: hidden;
+      margin-bottom: 2rem; position: relative; height: 220px;
+    }
+    .instructors-banner img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: brightness(.6) saturate(.9);
+    }
+    .instructors-banner-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(13,15,26,.7) 0%, transparent 55%);
+      display: flex; align-items: center; padding: 0 2.5rem;
+    }
+    .instructors-banner-overlay span {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 700; color: #fff; max-width: 420px; line-height: 1.4;
+    }
     .instructors-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -277,6 +296,30 @@
     }
 
     /* ── PHILOSOPHY ── */
+    .phil-banner {
+      border-radius: 18px; overflow: hidden;
+      margin-top: 2rem; position: relative;
+      height: 280px;
+    }
+    .phil-banner img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: brightness(.72);
+    }
+    .phil-banner-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(108,59,255,.55) 0%, transparent 60%);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 2rem 2.5rem;
+    }
+    .phil-banner-overlay h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-weight: 800; color: #fff; max-width: 480px;
+      line-height: 1.3; margin-bottom: .5rem;
+    }
+    .phil-banner-overlay p {
+      color: rgba(255,255,255,.82); font-size: .9rem; max-width: 400px;
+    }
     .phil-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -373,14 +416,16 @@
 
     /* ── CAMPUS ── */
     .campus-section {
-      background: linear-gradient(135deg, #1a0a0a 0%, #2d1010 50%, #1a0a0a 100%);
+      background:
+        linear-gradient(rgba(12,4,4,.82), rgba(22,8,8,.88)),
+        url('https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80') center/cover no-repeat;
       padding: 5rem 1.5rem; text-align: center;
       position: relative; overflow: hidden;
     }
     .campus-section::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(139,26,26,.3) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(139,26,26,.25) 0%, transparent 70%);
       pointer-events: none;
     }
     .campus-section .section-tag { color: #fbbf24; }
@@ -406,7 +451,10 @@
 
     /* ── CTA ── */
     .cta-section {
-      background: var(--grad); text-align: center; padding: 6rem 1.5rem;
+      background:
+        linear-gradient(135deg, rgba(108,59,255,.93) 0%, rgba(168,85,247,.9) 50%, rgba(236,72,153,.93) 100%),
+        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80') center/cover no-repeat;
+      text-align: center; padding: 6rem 1.5rem;
     }
     .cta-section h2 {
       font-family: 'Playfair Display', serif;
@@ -539,7 +587,7 @@
 </div>
 
 <!-- ════════════════════ TRANSFORMATION ════════════════════ -->
-<section class="section section-dark">
+<section class="section section-dark" style="background: linear-gradient(135deg, rgba(13,15,26,.93) 0%, rgba(26,21,64,.92) 100%), url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80') center/cover no-repeat;">
   <div class="container" style="text-align:center">
     <div class="section-tag" style="color:#a78bfa">Our Promise</div>
     <h2 class="section-title" style="color:#fff">This is not a course.<br>It is a transformation.</h2>
@@ -556,7 +604,7 @@
 </section>
 
 <!-- ════════════════════ PROGRAM DETAILS ════════════════════ -->
-<section class="section section-dark" style="padding-top:0">
+<section class="section section-dark" style="padding-top:0; background: linear-gradient(180deg, rgba(13,15,26,1) 0%, rgba(13,15,26,.97) 100%), url('https://images.unsplash.com/photo-1635372722656-389f87a941b7?w=1600&q=80') center/cover no-repeat;">
   <div class="container">
     <div class="prog-grid">
       <div class="prog-card">
@@ -605,10 +653,18 @@
     <div class="section-tag">Your Instructors</div>
     <h2 class="section-title">Learn from practitioners & researchers</h2>
     <p class="section-sub">World-class faculty who have built real systems — and know how to teach you to build yours.</p>
+    <div class="instructors-banner">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400&q=80" alt="Collaborative learning environment" loading="lazy" />
+      <div class="instructors-banner-overlay">
+        <span>Teaching that transforms — not just informs.</span>
+      </div>
+    </div>
     <div class="instructors-grid">
 
       <div class="instructor-card featured">
-        <div class="instructor-avatar">SG</div>
+        <div class="instructor-avatar" style="background:none; padding:0; overflow:hidden;">
+          <img src="images/sg_profile_pic.jpeg" alt="Sandeep Giri" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />
+        </div>
         <div class="instructor-name">Sandeep Giri</div>
         <div class="instructor-role">Lead Instructor · Course Creator</div>
         <p class="instructor-bio">
@@ -652,6 +708,13 @@
     <div class="section-tag">Learning Philosophy</div>
     <h2 class="section-title">Why "Invent to Learn" works</h2>
     <p class="section-sub">Struggling with a problem you designed yourself creates understanding no lecture ever can.</p>
+    <div class="phil-banner">
+      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1400&q=80" alt="Student learning by doing" loading="lazy" />
+      <div class="phil-banner-overlay">
+        <h3>The best way to understand something is to build it yourself.</h3>
+        <p>Problems first. Theory second. Invention always.</p>
+      </div>
+    </div>
     <div class="phil-grid">
       <div class="phil-card">
         <div class="phil-icon" style="background:#ede9fe">🔢</div>
@@ -1031,7 +1094,7 @@
 </section>
 
 <!-- ════════════════════ INCLUSION ════════════════════ -->
-<section class="section section-dark">
+<section class="section section-dark" style="background: linear-gradient(rgba(13,15,26,.88), rgba(26,21,64,.92)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80') center/cover no-repeat;">
   <div class="container" style="text-align:center">
     <div class="section-tag" style="color:#a78bfa">Classroom Culture</div>
     <h2 class="section-title" style="color:#fff">Everyone belongs here</h2>
