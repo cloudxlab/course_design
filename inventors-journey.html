@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Inventor's Journey — Sandeep Giri's Story | CloudxLab</title>
+  <meta name="description" content="How a college student who fell in love with computing built D.E. Shaw's first systems, founded tBits, worked at InMobi and Amazon — and then walked away from all of it to fix the way India learns to code." />
+  <meta name="author" content="Sandeep Giri, CloudxLab" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cloudxlab.com/inventors-journey/story" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="CloudxLab" />
+  <meta property="og:title" content="The Inventor's Journey — Sandeep Giri's Story" />
+  <meta property="og:description" content="How a college student who fell in love with computing built D.E. Shaw's first systems, founded tBits, worked at InMobi and Amazon — and then walked away to fix the way India learns." />
+  <meta property="og:url" content="https://cloudxlab.com/inventors-journey/story" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Inventor's Journey — Sandeep Giri's Story",
+    "description": "How Sandeep Giri went from a college student fascinated by computing to D.E. Shaw, tBits, InMobi, Amazon — and then founded CloudxLab to close the gap between education and industry.",
+    "author": {
+      "@type": "Person",
+      "name": "Sandeep Giri",
+      "sameAs": "https://www.linkedin.com/in/girisandeep/",
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "IIT Roorkee" }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CloudxLab",
+      "url": "https://cloudxlab.com"
+    },
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-03-27"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #0d0f1a;
+      --white:  #ffffff;
+      --slate:  #64748b;
+      --light:  #f8fafc;
+      --border: #e2e8f0;
+      --accent: #6c3bff;
+      --grad:   linear-gradient(135deg, #6c3bff 0%, #a855f7 50%, #ec4899 100%);
+      --grad2:  linear-gradient(135deg, #0d0f1a 0%, #1a1540 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(13,15,26,.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .nav-left { display: flex; align-items: center; gap: 1rem; }
+    .nav-logo { display: flex; align-items: center; gap: .5rem; text-decoration: none; }
+    .nav-logo-badge {
+      background: var(--grad); color: #fff;
+      font-size: .68rem; font-weight: 800; letter-spacing: .08em;
+      padding: .22rem .5rem; border-radius: 5px;
+    }
+    .nav-logo-text { color: #fff; font-size: 1rem; font-weight: 700; }
+    .nav-divider { width: 1px; height: 20px; background: rgba(255,255,255,.15); }
+    .nav-partner { color: #94a3b8; font-size: .75rem; font-weight: 500; letter-spacing: .05em; }
+    .nav-partner strong { color: #fbbf24; font-weight: 700; }
+    .nav-cta {
+      background: var(--grad); color: #fff;
+      border: none; border-radius: 8px;
+      padding: .55rem 1.4rem; font-size: .88rem; font-weight: 700;
+      cursor: pointer; text-decoration: none;
+      transition: opacity .2s, transform .2s;
+    }
+    .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--grad2);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 9rem 1.5rem 6rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 20% 60%, rgba(108,59,255,.25) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 55% at 80% 30%, rgba(236,72,153,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(108,59,255,.18); border: 1px solid rgba(108,59,255,.35);
+      color: #c4b5fd; font-size: .78rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; padding: .4rem 1rem; border-radius: 100px;
+      margin-bottom: 1.75rem; position: relative;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-weight: 800; color: #fff;
+      line-height: 1.1; max-width: 820px; margin: 0 auto .75rem;
+      position: relative;
+    }
+    .hero h1 em {
+      font-style: italic;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: #94a3b8; max-width: 600px; margin: 0 auto 2.5rem;
+      line-height: 1.75; position: relative;
+    }
+    .hero-sub strong { color: #e2e8f0; }
+    .hero-portrait {
+      width: 110px; height: 110px; border-radius: 50%;
+      border: 3px solid rgba(108,59,255,.5);
+      object-fit: cover; margin-bottom: 1.5rem;
+      box-shadow: 0 0 40px rgba(108,59,255,.35);
+      position: relative;
+    }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,.35); font-size: .75rem; letter-spacing: .1em;
+      text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: .4rem;
+    }
+    .hero-scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.3), transparent);
+    }
+
+    /* ── SHARED ── */
+    .section { padding: 5.5rem 1.5rem; }
+    .section-light { background: var(--light); }
+    .section-dark  { background: var(--grad2); }
+    .container { max-width: 840px; margin: 0 auto; }
+    .container-wide { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .6rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800; line-height: 1.2; margin-bottom: .9rem;
+    }
+    .section-sub { color: var(--slate); font-size: 1rem; line-height: 1.75; }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; padding-left: 2.5rem; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 0; top: .4rem; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom,
+        #6c3bff 0%, #a855f7 40%, #ec4899 75%, rgba(108,59,255,.1) 100%);
+      border-radius: 2px;
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 3.5rem;
+    }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -2.9rem; top: .35rem;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--grad);
+      box-shadow: 0 0 0 4px var(--white), 0 0 16px rgba(108,59,255,.5);
+      flex-shrink: 0;
+    }
+    .tl-dot-hollow {
+      background: var(--white);
+      border: 2px solid #6c3bff;
+      box-shadow: 0 0 0 4px var(--white);
+    }
+    .tl-year {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: .4rem;
+    }
+    .tl-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 700;
+      line-height: 1.25; margin-bottom: .6rem;
+    }
+    .tl-body {
+      color: var(--slate); font-size: .97rem; line-height: 1.8;
+    }
+    .tl-body strong { color: var(--ink); }
+    .tl-tag {
+      display: inline-block; margin-top: .75rem;
+      background: rgba(108,59,255,.08); border: 1px solid rgba(108,59,255,.2);
+      color: var(--accent); font-size: .72rem; font-weight: 600;
+      padding: .25rem .75rem; border-radius: 100px;
+      letter-spacing: .05em;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      margin: 0;
+      padding: 2rem 2.5rem;
+      border-left: 4px solid var(--accent);
+      background: rgba(108,59,255,.05);
+      border-radius: 0 12px 12px 0;
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      font-style: italic; font-weight: 700;
+      color: var(--ink); line-height: 1.5;
+    }
+    .pull-quote cite {
+      display: block; margin-top: .75rem;
+      font-size: .82rem; color: var(--slate);
+      font-style: normal; font-weight: 500;
+    }
+
+    /* ── THE REALIZATION ── */
+    .realization {
+      background: var(--grad2);
+      border-radius: 20px;
+      padding: 3.5rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .realization::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 30% 50%, rgba(108,59,255,.25) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 75% 40%, rgba(236,72,153,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .realization-inner { position: relative; }
+    .realization-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .realization h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 800; color: #fff;
+      line-height: 1.2; margin-bottom: 1rem;
+    }
+    .realization p {
+      font-size: 1rem; color: #94a3b8; line-height: 1.8;
+      max-width: 580px; margin: 0 auto;
+    }
+    .realization p strong { color: #e2e8f0; }
+
+    /* ── FOUNDERS ── */
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .founder-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .founder-card:hover { box-shadow: 0 8px 32px rgba(108,59,255,.12); transform: translateY(-2px); }
+    .founder-photo {
+      width: 72px; height: 72px; border-radius: 50%;
+      object-fit: cover; margin-bottom: 1rem;
+      border: 2px solid rgba(108,59,255,.3);
+    }
+    .founder-name { font-size: 1.1rem; font-weight: 700; margin-bottom: .25rem; }
+    .founder-title { font-size: .82rem; color: var(--accent); font-weight: 600; margin-bottom: .75rem; }
+    .founder-bio { font-size: .93rem; color: var(--slate); line-height: 1.75; }
+    .founder-bio strong { color: var(--ink); }
+    .founder-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      margin-top: 1rem; font-size: .8rem; font-weight: 600;
+      color: var(--accent); text-decoration: none;
+      transition: gap .15s;
+    }
+    .founder-link:hover { gap: .65rem; }
+
+    /* ── PHILOSOPHY CARDS ── */
+    .philo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .philo-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .philo-icon { font-size: 2rem; margin-bottom: .75rem; }
+    .philo-title { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+    .philo-body { font-size: .88rem; color: var(--slate); line-height: 1.7; }
+
+    /* ── METRIC STRIP ── */
+    .metric-strip {
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      justify-content: center; padding: 2.5rem;
+      background: rgba(108,59,255,.06);
+      border-radius: 16px;
+      border: 1px solid rgba(108,59,255,.15);
+    }
+    .metric { text-align: center; }
+    .metric-num {
+      font-size: 2.2rem; font-weight: 900; color: var(--ink); line-height: 1;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .metric-lbl { font-size: .72rem; color: var(--slate); font-weight: 500;
+      letter-spacing: .05em; text-transform: uppercase; margin-top: .3rem; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--grad2);
+      padding: 6rem 1.5rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 55% 65% at 20% 50%, rgba(108,59,255,.28) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 40%, rgba(236,72,153,.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800; color: #fff; line-height: 1.2;
+      margin-bottom: 1rem; position: relative;
+    }
+    .cta-section h2 em {
+      font-style: italic;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .cta-section p {
+      color: #94a3b8; font-size: 1rem; line-height: 1.75;
+      max-width: 520px; margin: 0 auto 2.5rem;
+      position: relative;
+    }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; position: relative; }
+    .btn-primary {
+      background: var(--grad); color: #fff;
+      padding: .95rem 2.4rem; border-radius: 10px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      box-shadow: 0 0 36px rgba(108,59,255,.45);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 52px rgba(108,59,255,.6); }
+    .btn-ghost {
+      background: transparent; color: #e2e8f0;
+      padding: .95rem 2.2rem; border-radius: 10px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      border: 1px solid rgba(255,255,255,.2);
+      transition: border-color .2s, background .2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.05); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080a12;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: #475569;
+      font-size: .8rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    footer a { color: #6c3bff; text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: .75rem 1rem; }
+      .timeline { padding-left: 2rem; }
+      .tl-dot { left: -2.4rem; }
+      .realization { padding: 2rem 1.5rem; }
+      .pull-quote { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a class="nav-logo" href="index.html">
+      <span class="nav-logo-badge">CxL</span>
+      <span class="nav-logo-text">CloudxLab</span>
+    </a>
+    <div class="nav-divider"></div>
+    <span class="nav-partner">In partnership with <strong>IIT Roorkee</strong></span>
+  </div>
+  <a class="nav-cta" href="index.html#pricing">Enroll Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">The Founder's Story</div>
+  <img
+    class="hero-portrait"
+    src="https://cloudxlab-misc.s3.ap-south-1.amazonaws.com/sandeep_giri.jpg"
+    alt="Sandeep Giri — Founder, CloudxLab"
+    onerror="this.style.display='none'"
+  />
+  <h1>The Inventor's Journey<br><em>began with one student.</em></h1>
+  <p class="hero-sub">
+    How <strong>Sandeep Giri</strong> went from a college student consumed by computing
+    to D.E.&nbsp;Shaw, Amazon, and back — to build the course he wished had existed.
+  </p>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    scroll
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag">The Journey</div>
+    <h2 class="section-title">From first principles to a movement</h2>
+    <p class="section-sub" style="margin-bottom:3.5rem;">
+      Every chapter of this story is a clue to why the course exists — and why it works the way it does.
+    </p>
+
+    <div class="timeline">
+
+      <!-- 1: College -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-year">College Years</span>
+        <h3 class="tl-title">A student discovers what computing really is</h3>
+        <div class="tl-body">
+          <p>While his classmates treated programming as one of many subjects to get through,
+          Sandeep couldn't stop. He studied <strong>every aspect of computing</strong> — not for grades,
+          but because each idea led to another, deeper one. Operating systems. Algorithms. Data structures.
+          Computer architecture. He wasn't building a CV. He was building a model of the world
+          inside his head.</p>
+          <p style="margin-top:.75rem;">The real insight came from going beyond the syllabus — from
+          asking not just <em>what</em> an algorithm does, but <em>why</em> it was designed that way.
+          That question would define everything that followed.</p>
+        </div>
+        <span class="tl-tag">First principles thinking</span>
+      </div>
+
+      <!-- 2: D.E. Shaw -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-year">2002</span>
+        <h3 class="tl-title">D.E. Shaw — the very first hire</h3>
+        <div class="tl-body">
+          <p>In 2002, Sandeep joined <strong>D.E. Shaw</strong>, one of the most selective quantitative
+          investment firms in the world — a company that hired fewer engineers than most IIT departments
+          graduated. Getting in required exactly the kind of thinking he had spent college developing:
+          the ability to reason from scratch, not recall from memory.</p>
+          <p style="margin-top:.75rem;">He wasn't handed a playbook. He built systems. He solved
+          problems that had no known answers. And he learned, early, that the engineers who thrived
+          were the ones who had trained themselves to think — not just to execute.</p>
+        </div>
+        <span class="tl-tag">D.E. Shaw, 2002</span>
+      </div>
+
+      <!-- 3: tBits -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-year">Entrepreneurship</span>
+        <h3 class="tl-title">The first company — tBits</h3>
+        <div class="tl-body">
+          <p>The entrepreneur in him couldn't stay dormant. Sandeep founded <strong>tBits</strong>,
+          channelling his technical depth into building something from the ground up.
+          Starting a company is a different kind of education — every decision is made without
+          a safety net, every design choice has consequences. It is, in many ways, the purest form of
+          learning by inventing.</p>
+        </div>
+        <span class="tl-tag">Founder</span>
+      </div>
+
+      <!-- 4: InMobi -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-year">Industry</span>
+        <h3 class="tl-title">InMobi — scale, data, and machine intelligence</h3>
+        <div class="tl-body">
+          <p>At <strong>InMobi</strong>, Sandeep worked inside one of India's first global tech unicorns —
+          at the intersection of data, scale, and machine learning long before ML became a buzzword in
+          Indian tech. He saw how the most impactful engineers weren't the ones who knew the most
+          frameworks. They were the ones who understood the underlying mathematics well enough to
+          know when frameworks were wrong.</p>
+        </div>
+        <span class="tl-tag">InMobi</span>
+      </div>
+
+      <!-- 5: Amazon -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-year">Industry</span>
+        <h3 class="tl-title">Amazon — engineering at the world's highest standard</h3>
+        <div class="tl-body">
+          <p>Amazon was the final, and perhaps most instructive, chapter of Sandeep's industry career.
+          <strong>Amazon's engineering culture is famously first-principles</strong> — decisions are
+          justified, systems are questioned, and seniority earns you the right to be challenged more,
+          not less. It was a culture Sandeep recognised immediately, because it matched the way he had
+          always thought.</p>
+          <p style="margin-top:.75rem;">It also crystallised a growing frustration: the engineers who
+          struggled at Amazon weren't the ones who lacked intelligence. They were the ones whose
+          education had trained them to reproduce answers — not to generate them.</p>
+        </div>
+        <span class="tl-tag">Amazon</span>
+      </div>
+
+      <!-- 6: The Gap -->
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#ec4899; box-shadow:0 0 0 4px #fff, 0 0 20px rgba(236,72,153,.5);"></div>
+        <span class="tl-year" style="color:#ec4899;">The Realisation</span>
+        <h3 class="tl-title">A gap no one was closing</h3>
+        <div class="tl-body">
+          <p>Across D.E. Shaw, InMobi, and Amazon, Sandeep hired engineers, mentored new graduates,
+          and watched the same pattern repeat itself. <strong>Brilliant students. Strong marks.
+          Completely unprepared.</strong> They had memorised textbooks and survived exams —
+          but when a problem had no answer key, they froze.</p>
+          <p style="margin-top:.75rem;">The gap wasn't talent. It wasn't effort.
+          It was the <em>method</em>. Indian education had perfected the delivery of information.
+          It had entirely neglected the development of thinking.</p>
+        </div>
+        <span class="tl-tag">The turning point</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="section section-light" style="padding-top:1rem; padding-bottom:4rem;">
+  <div class="container">
+    <blockquote class="pull-quote">
+      <p>"Formulas are forgettable. What you invent — you own. I had seen too many engineers
+      who could recite algorithms but couldn't design one. That's not a talent problem.
+      That's a teaching problem."</p>
+      <cite>— Sandeep Giri, Founder, CloudxLab</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- THE REALIZATION CARD -->
+<section class="section section-light" style="padding-top:0;">
+  <div class="container">
+    <div class="realization">
+      <div class="realization-inner">
+        <div class="realization-icon">💡</div>
+        <h3>Education had a design flaw. Sandeep decided to fix it.</h3>
+        <p>
+          The most in-demand engineering roles in the world — at companies like
+          <strong>Google, Amazon, D.E. Shaw, and every AI-first startup</strong> —
+          require one thing above all else: the ability to think through a problem
+          no one has seen before. Yet every course, every bootcamp, and every
+          textbook was optimised for the opposite: teaching known answers to known questions.
+          Sandeep didn't want to build another course. He wanted to build a different kind of engineer.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOUDXLAB — FOUNDING -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag">The Company</div>
+    <h2 class="section-title">CloudxLab is born — with a student who became a co-founder</h2>
+    <p class="section-sub" style="margin-bottom:2.5rem;">
+      Sandeep didn't just start a company. He found a collaborator who had lived through
+      the problem firsthand.
+    </p>
+
+    <div class="founders-grid" style="margin-bottom:3rem;">
+      <div class="founder-card">
+        <img
+          class="founder-photo"
+          src="https://cloudxlab-misc.s3.ap-south-1.amazonaws.com/sandeep_giri.jpg"
+          alt="Sandeep Giri"
+          onerror="this.style.display='none'"
+        />
+        <div class="founder-name">Sandeep Giri</div>
+        <div class="founder-title">Founder, CloudxLab &amp; Terno AI</div>
+        <p class="founder-bio">
+          IIT Roorkee alumnus. Former engineer at <strong>D.E. Shaw, InMobi, and Amazon</strong>.
+          Founder of tBits. Spent two decades watching brilliant engineers struggle because their education
+          had taught them to memorise rather than think. Started CloudxLab to change that.
+        </p>
+        <a class="founder-link" href="https://www.linkedin.com/in/girisandeep/" target="_blank" rel="noopener">
+          LinkedIn →
+        </a>
+      </div>
+
+      <div class="founder-card">
+        <img
+          class="founder-photo"
+          src="https://cloudxlab-misc.s3.ap-south-1.amazonaws.com/abhinav_singh.jpg"
+          alt="Abhinav Singh"
+          onerror="this.style.display='none'"
+        />
+        <div class="founder-name">Abhinav Singh</div>
+        <div class="founder-title">Co-Founder, CloudxLab</div>
+        <p class="founder-bio">
+          One of Sandeep's own students — and the first person to tell him that the way he taught
+          was unlike anything available. Abhinav had felt the gap from the student's side:
+          courses that delivered content without building understanding. He <strong>believed in the
+          mission</strong> deeply enough to help build it. Together, they designed the platform
+          that powers CloudxLab today.
+        </p>
+        <a class="founder-link" href="https://www.linkedin.com/in/abhinavsingh/" target="_blank" rel="noopener">
+          LinkedIn →
+        </a>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot-hollow tl-dot"></div>
+        <span class="tl-year">CloudxLab — Phase 1</span>
+        <h3 class="tl-title">A hands-on learning platform, built from the ground up</h3>
+        <div class="tl-body">
+          <p>The first thing Sandeep and Abhinav agreed on: <strong>no passive video watching</strong>.
+          The platform they built required learners to actually write code, run it in the cloud,
+          and get feedback — immediately, without setup. No local environment. No installation friction.
+          Just a problem, a browser, and the requirement to solve it.</p>
+          <p style="margin-top:.75rem;">This was 2014. Browser-based cloud labs for learning to code
+          were not yet standard. CloudxLab was one of the first to make them work reliably at scale.</p>
+        </div>
+        <span class="tl-tag">Hands-on lab · Cloud-native</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot-hollow tl-dot"></div>
+        <span class="tl-year">CloudxLab — Phase 2</span>
+        <h3 class="tl-title">Gamification — making persistence feel like play</h3>
+        <div class="tl-body">
+          <p>Learning to code is hard. Most people quit not because the material is too difficult,
+          but because <strong>the feedback loop is too slow</strong>. You put in effort;
+          you don't know if it's working; you lose momentum.</p>
+          <p style="margin-top:.75rem;">Sandeep and Abhinav added gamification components — streaks,
+          badges, leaderboards, instant automated feedback — to make progress visible and the next
+          step obvious. The goal was not to make it easier. The goal was to make it
+          <em>impossible to stop</em>.</p>
+        </div>
+        <span class="tl-tag">Gamification · Automated feedback</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot-hollow tl-dot"></div>
+        <span class="tl-year">The Evolution</span>
+        <h3 class="tl-title">Good wasn't good enough — the method kept improving</h3>
+        <div class="tl-body">
+          <p>CloudxLab grew. The platform worked. Students were learning.
+          But Sandeep kept noticing the same thing: students who completed the platform
+          could use tools, but still struggled when a problem looked different from what they had practised.
+          The platform was teaching skills. He wanted it to teach <em>thinking</em>.</p>
+          <p style="margin-top:.75rem;">Over years of iteration — watching students, adjusting problems,
+          reordering modules, changing the sequencing of explanation and challenge — a new method emerged:
+          <strong>problem first, explanation second</strong>. Give students a problem they have never seen.
+          Let them struggle. Then, and only then, reveal the concept. The struggle is not the obstacle.
+          The struggle is the learning.</p>
+        </div>
+        <span class="tl-tag">Invent-to-Learn method</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-year" style="color:#a855f7;">Today</span>
+        <h3 class="tl-title">The Inventor's Journey — learning by inventing</h3>
+        <div class="tl-body">
+          <p>The course that emerged from all of this is not a collection of video lectures.
+          It is a structured, 8-month programme in which every concept is first presented as a problem
+          you have never been given the answer to. You design. You build. You defend.
+          And then — only after you have invented your own version — you discover what the world
+          calls it and why it was designed that way.</p>
+          <p style="margin-top:.75rem;">By the end, students don't know algorithms.
+          They <strong>own</strong> them. And that is a different kind of knowledge entirely —
+          the kind that doesn't disappear under pressure, that adapts when the problem changes,
+          and that makes an interviewer lean forward rather than move on.</p>
+        </div>
+        <span class="tl-tag">The Inventor's Journey · IIT Roorkee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section section-light">
+  <div class="container-wide">
+    <div style="text-align:center; max-width:600px; margin:0 auto 3rem;">
+      <div class="section-tag">The Method</div>
+      <h2 class="section-title">Why it works — three ideas Sandeep never stopped believing</h2>
+    </div>
+    <div class="philo-grid">
+      <div class="philo-card">
+        <div class="philo-icon">🔬</div>
+        <div class="philo-title">Struggle before explanation</div>
+        <p class="philo-body">When you encounter a concept before you have been told what it is,
+        your brain creates a genuine need for it. The explanation lands differently. It becomes
+        the answer to a question you were already asking.</p>
+      </div>
+      <div class="philo-card">
+        <div class="philo-icon">🏗️</div>
+        <div class="philo-title">Build it before you use it</div>
+        <p class="philo-body">Anyone can import a library. But the person who has built a neural
+        network from NumPy sees the library differently — as a convenience on top of something
+        they already understand. That is a different level of confidence.</p>
+      </div>
+      <div class="philo-card">
+        <div class="philo-icon">🎤</div>
+        <div class="philo-title">Defend what you invented</div>
+        <p class="philo-body">Explaining your solution out loud — to an instructor, to a peer,
+        in a mock interview — is the highest form of encoding. If you can defend it,
+        you own it. If you can't, you've identified the gap before it costs you.</p>
+      </div>
+      <div class="philo-card">
+        <div class="philo-icon">♾️</div>
+        <div class="philo-title">Transferable forever</div>
+        <p class="philo-body">Programming languages change. Frameworks get deprecated.
+        But the ability to decompose a new problem into solvable pieces — that is a skill
+        you carry into every role, every year, for the rest of your career.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:2.5rem;">
+      <div class="section-tag">The Impact</div>
+      <h2 class="section-title">Two decades of building. One programme that changes what's possible.</h2>
+    </div>
+    <div class="metric-strip">
+      <div class="metric">
+        <div class="metric-num">20+</div>
+        <div class="metric-lbl">Years in industry</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">3</div>
+        <div class="metric-lbl">Top-tier companies</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">8</div>
+        <div class="metric-lbl">Months to transform</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">30+</div>
+        <div class="metric-lbl">Projects you build</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">6</div>
+        <div class="metric-lbl">World-class instructors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>This is the course<br><em>Sandeep wished he had.</em></h2>
+  <p>
+    Every decision in The Inventor's Journey traces back to something Sandeep
+    observed — in classrooms, in interviews, in engineering teams at the world's best companies.
+    Now you get to learn the way he always believed learning should work.
+  </p>
+  <div class="cta-actions">
+    <a class="btn-primary" href="index.html#pricing">Enroll in the June Batch →</a>
+    <a class="btn-ghost" href="index.html">See the Full Programme</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 CloudxLab · In partnership with IIT Roorkee ·
+     <a href="index.html">The Inventor's Journey</a> ·
+     <a href="https://www.linkedin.com/in/girisandeep/" target="_blank" rel="noopener">Sandeep Giri on LinkedIn</a>
+  </p>
+  <p style="margin-top:.5rem; color:#334155;">Last updated: March 2026</p>
+</footer>
+
+</body>
+</html>
