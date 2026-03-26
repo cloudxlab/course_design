@@ -48,3 +48,41 @@ The course is offered as two certificates:
 The timing of the course batch starting on 30 May and 30 June is from 8pm IST - 10pm IST on every Saturday-Sunday. 
 
 The timing of the course batch starting on 30 Sept is from 8am IST - 10am IST on every Saturday-Sunday. 
+
+-- 
+Add LinkedIn profile of Sandeep Giri: https://www.linkedin.com/in/girisandeep/
+
+
+Add the following in faculty:
+
+Sanjeev Manhas, Faculty ECE Dept, IIT Roorkee, 
+Linkedin: https://www.linkedin.com/in/sanjeev-manhas-64493b5
+Profile pic: https://cxl-web-prod-static.s3.amazonaws.com/course/details/images/Manhas_Sanjeev.jpg
+
+Abhinav Singh
+Co-Founder at CloudxLab
+Past: Byjus
+Linkedin: https://www.linkedin.com/in/singh-abhinav/
+Profile pic: https://cxl-web-prod-static.s3.amazonaws.com/IITR/img/instructors/abhinav_singh.jpg
+
+
+Dr. M.L. Virdi
+Senior Research Scientist
+NASA
+Linkedin: https://www.linkedin.com/in/mlvirdi/
+Profile pic: https://cxl-web-prod-uploads.s3.amazonaws.com/public/filestore-uploads/0502f61fc53cd33056ff43b161b9208e32a5e292.png
+
+Praveen Pavithran
+Co-Founder at Yatis
+Past: YourCabs, Cypress Semiconductor
+Linkedin: https://in.linkedin.com/in/praveentp
+Profile pic: https://cxl-web-prod-static.s3.amazonaws.com/IITR/img/instructors/praveen_pavithran1.jpg
+
+Jatin Shah
+Ex-LinkedIn, Yahoo, Yale CS Ph.D.
+IIT-B
+Profile pic:https://cxl-web-prod-static.s3.amazonaws.com/course/details/images/jatin-shah.jpg
+Linkedin: https://in.linkedin.com/in/shahjatin
+
+---
+
