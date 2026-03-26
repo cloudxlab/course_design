@@ -1,0 +1,376 @@
+REVIEW: THE INVENTOR'S JOURNEY — LANDING PAGE
+Perspective: First-Year Graduation Student (1st Year UG, ~18–19 years old)
+Reviewed: March 2026
+─────────────────────────────────────────────────────────────────────────────
+
+PERSONA SNAPSHOT
+────────────────
+Just finished 12th grade. Now in first year of B.Tech / BCA / BSc (CS/IT or
+related). Age ~18–19. Parents paying the fees. Some Python exposure from
+school or college lab sessions. Has heard of IIT and wishes they had made it
+there. Motivated to build a career in tech/AI. Worried about managing this
+alongside college assignments and exams. Limited financial independence.
+High aspirational pull toward anything with "IIT" in the name.
+
+
+SECTION-BY-SECTION REVIEW
+──────────────────────────
+
+1. NAV
+   Rating: ✅ Good
+
+   - "In partnership with IIT Roorkee" is immediately visible and creates
+     instant credibility. For someone who didn't get into IIT, this line is
+     emotionally significant.
+   - "Pricing" link in the nav is appreciated — a student will want to check
+     cost before reading everything.
+   - "Enroll Now" is clear. No issues.
+
+   Concern: None from this persona.
+
+
+2. HERO
+   Rating: ✅ Strong — with one concern
+
+   - "Stop memorising formulas. Start inventing." is the single most resonant
+     line on the page for a student who just survived board exams through rote
+     learning. Hits hard in a good way.
+   - "10th Grade Onwards" is visible and reassuring — confirms they qualify.
+   - Batch status chips (Sold Out / Enrolling Now / Open) with timings are
+     helpful. 8–10 pm IST on Sat-Sun is workable — college weekends are
+     usually free.
+   - "IIT Roorkee Certificate" in the facts strip is prominently placed.
+
+   Concern: The hero says "Taught by an IIT Roorkee alumnus and IIT
+   Professors" — inspiring, but the student will immediately wonder: "Is this
+   a real IIT Roorkee program or just a private course that uses the IIT name?"
+   The page answers this later, but adding a one-liner like "Jointly certified
+   by IIT Roorkee" in the hero subtitle would remove doubt immediately.
+
+
+3. TRUST BAR
+   Rating: ⚠️ Minor gap
+
+   - All items make sense. "PyQuest for Beginners" stands out as a safety net.
+   - "30+ Projects" and "Cloud Lab" are strong for students who may not have
+     good hardware at home or in hostels.
+
+   Concern: The trust bar is great for reinforcing trust but doesn't address
+   the student's core anxiety: "Is this for me as a college student or only
+   for professionals?"
+
+
+4. TRANSFORMATION ("This is not a course. It is a transformation.")
+   Rating: ✅ Excellent
+
+   - This section lands perfectly for a 1st-year student. They are at exactly
+     the moment in their life where they feel the gap between school education
+     and real-world skill. The message "you will know why they exist, because
+     you invented your own versions" directly addresses the frustration of
+     memorising without understanding.
+   - The Sandeep Giri quote is aspirational without being preachy.
+
+   Concern: None. This section works very well for this persona.
+
+
+5. PROGRAM DETAILS (grid cards)
+   Rating: ⚠️ One card creates confusion
+
+   - Most cards are fine: Duration, Schedule, Certificate, Projects, Lab all
+     make sense to this student.
+
+   PROBLEM: The "Duration" card sub-text says "Designed for working
+   professionals." A 1st-year student reads this and immediately wonders:
+   "Wait — is this not for me? Am I wasting my time reading further?"
+   This is a significant friction point. A student who isn't a "working
+   professional" may feel excluded right here.
+
+   Suggestion: Change sub-text to "Fits around college or work schedules"
+   or "Weekend pace — study without pausing your degree."
+
+
+6. INSTRUCTORS
+   Rating: ✅ Very strong for this persona
+
+   - Sandeep Giri's credentials (Amazon, D.E. Shaw, InMobi, IIT Roorkee) are
+     genuinely impressive to a college student who recognises these names from
+     placement prep.
+   - "Professors from IIT Roorkee, IIT Delhi, and IIT Bombay" is the strongest
+     credibility signal on the page for this audience. IIT students are seen as
+     elite — the chance to be taught by IIT professors is a huge pull.
+   - LinkedIn link is a nice trust signal — students will check it.
+
+   Concern: The "Professors from IITs" card says "Professors from IIT Roorkee,
+   IIT Delhi, and IIT Bombay" but gives no names. A student will want to know:
+   "Which professors? Can I look them up?" Naming at least one professor (even
+   initials + department) would significantly increase trust.
+
+
+7. PHILOSOPHY ("What is the Invent-to-Learn Method?")
+   Rating: ✅ Resonates strongly
+
+   - "Problems before explanations" directly contrasts with the lecture-first
+     style of Indian college education. A 1st-year student is likely already
+     frustrated with this in their college.
+   - "Defend Your Invention" — this is unfamiliar but intriguing. It feels like
+     something their college doesn't offer, which makes it feel premium.
+   - "Questions are celebrated" — this is meaningful for students from a culture
+     where asking questions in class can feel risky.
+
+   Concern: The section title changed to "What is the Invent-to-Learn Method?"
+   — good for search, but slightly clinical. From a student's perspective, the
+   sub-heading "Struggling with a problem you designed yourself creates
+   understanding no lecture ever can" does the heavy lifting. No change needed.
+
+
+8. CURRICULUM (9 Modules)
+   Rating: ✅ Impressive, but can be overwhelming
+
+   - Seeing "Python, Machine Learning, Deep Learning, Transformers, RL" laid
+     out in order is exciting. For a 1st-year student, this reads like "I could
+     know all of this in 8 months."
+   - Module 1 ("Python by Invention") is particularly well described — the
+     student sees topics they've heard of (LLMs, AI Agents, RAG) and feels this
+     is cutting-edge.
+   - Module 3 ("ML with IIT Professors") feels especially valuable.
+
+   Concerns:
+   a) Overlap with college syllabus: A 1st-year CS/IT student is likely
+      studying some of these topics (Python, Data Structures, Algorithms) in
+      college. The page doesn't acknowledge this overlap or explain how this
+      program goes deeper than what college teaches. Adding a line like
+      "If your college teaches these topics, we go 10x deeper — by inventing"
+      would reframe this as a complement, not a duplicate.
+
+   b) A 1st-year student may not recognise all the terms in the later modules
+      (e.g., "Encoder-decoder architecture", "Markov Decision Processes").
+      This isn't a problem per se — it creates curiosity — but there's no
+      "beginners welcome" reassurance within the curriculum section itself.
+
+   c) No indication of how much time per module or how modules map to the
+      8-month schedule. A student juggling college exams will want to know:
+      "Will I get a break around my semester exams?"
+
+
+9. PROJECTS (30+)
+   Rating: ✅ Excellent — highly motivating for this persona
+
+   - Seeing "Kaggle Competition," "Transformer from Scratch," "RL Agent" on a
+     list alongside "Custom Number System" tells a clear story: this builds
+     from zero to portfolio-ready.
+   - For a 1st-year student, "public ML profile" on Kaggle is an exciting
+     concept. Many will have heard of Kaggle but never participated.
+   - "Dockerised ML API" and "RAG Document Q&A" signal job-readiness in ways
+     college projects rarely do.
+
+   Concern: The stat "14 more projects across all modules" is vague. A 1st-year
+   student building a portfolio would want to know what those projects are.
+   Consider showing 2–3 more specific project names to maintain momentum.
+
+
+10. HIGHLIGHTS ("What sets this program apart")
+    Rating: ✅ Good
+
+    - "PyQuest — For Absolute Beginners" is the most important card in this
+      section for a 1st-year student. Even students with some coding experience
+      will feel reassured that there's a proper on-ramp.
+    - "Cloud-Based Online Lab — No setup. No installations." is critical for
+      students in hostels, shared computers, or low-spec laptops.
+    - "Self-Paced Automated Assessments" is a nice differentiator from college
+      where grading is slow and opaque.
+
+    Concern: "Credentials & Career" sub-section talks about the IIT certificate
+    but doesn't address the certificate type distinction: a 1st-year student
+    gets the "Certificate" (not "PG Certificate"). While the Pricing section
+    handles this, the student might wonder here if the certificate they get is
+    somehow lesser. Worth adding a note: "Certificate track available for
+    students — same curriculum, same campus, same IIT Roorkee seal."
+
+
+11. CAMPUS IMMERSION
+    Rating: ✅ Powerful for this persona — probably the most emotionally
+    compelling section
+
+    - For a student who didn't make it to IIT, "Step onto one of India's
+      greatest campuses" is not just a marketing line — it is genuinely
+      meaningful. Walking through IIT Roorkee, attending lab sessions with IIT
+      professors, and receiving a certificate in a graduation ceremony on campus
+      is a deeply aspirational experience.
+    - "Graduation Ceremony" is a particularly strong detail. This student is in
+      their first year of a 3–4 year degree — a graduation ceremony at IIT
+      Roorkee in 8 months feels special.
+    - Day 1 / Day 2 itinerary is helpful and makes it feel concrete and planned.
+
+    Concern: Campus fees (₹2,000/day) are mentioned in the FAQ but not here.
+    Students and parents will ask "Is the campus visit included in the fee?"
+    A single line in this section — "Campus fees ~₹2,000/day, charged
+    separately; travel & stay at own cost" — would prevent surprise and build
+    trust.
+
+
+12. CAREERS ("Which jobs can you get after completing this course?")
+    Rating: ⚠️ Aspirational but missing critical context for this persona
+
+    - All 6 roles (SDE, Data Scientist, ML Engineer, AI Engineer, ML Scientist,
+      ML Researcher) are roles a 1st-year student has likely heard of and
+      aspires to.
+
+    PROBLEM: There is no timeline or degree context. A student reading this
+    will wonder: "Will I get one of these jobs after this course alone, or do I
+    still need to finish my degree?" This is the single most important unanswered
+    question for this persona. The page currently implies (but doesn't state)
+    that the program is meant to complement a degree.
+
+    Suggestion: Add a one-liner such as: "This program gives you the technical
+    depth to stand out during campus placements and off-campus applications —
+    whether you're in college now or a recent graduate."
+
+
+13. WHO IS THIS FOR
+    Rating: ✅ Good — this persona is explicitly named
+
+    - "Students: High-school to college. Build the foundation most universities
+      skip." — this card speaks directly to the 1st-year student and validates
+      them as a primary audience. It also subtly acknowledges what's missing
+      from college (foundation).
+    - Four segments are well-chosen and cover the audience.
+
+    Concern: The "Students" card is brief compared to the "Working
+    Professionals" card. Since a 1st-year student is the most uncertain and
+    anxious persona, this card deserves a little more detail:
+    e.g., "Build the technical depth your degree won't give you — and enter
+    the job market with a portfolio and an IIT Roorkee certificate."
+
+
+14. INCLUSION ("Everyone belongs here")
+    Rating: ✅ Warm and reassuring
+
+    - "No question is too basic. No curiosity is too ambitious." is a good line
+      for a student who may feel intimidated by terms like "Transformers" or
+      "Reinforcement Learning" in the curriculum.
+    - "All Age Groups" is fine but less relevant for this persona. "All Year
+      Groups" or something that normalises a 1st-year student being in the same
+      cohort as experienced professionals would be more useful here.
+
+    Concern: A 1st-year student might feel intimidated sharing a class with
+    industry professionals. A line acknowledging the mixed cohort as a feature
+    ("Learn alongside working engineers — and skip the gap between college and
+    industry") would turn a potential anxiety into a selling point.
+
+
+15. FAQ
+    Rating: ⚠️ Several key questions for this persona are missing
+
+    Existing FAQs that are relevant and helpful for this student:
+    - "Do I need prior programming experience?" — critical, answered well
+    - "What is the schedule like?" — critical, answered well
+    - "What is the minimum age requirement?" — reassuring
+    - "What laptop do I need?" — important for students
+    - "How is this different from MOOCs?" — addresses a real concern
+    - "Now that AI is here, do we still need to learn coding?" — very relevant
+
+    MISSING FAQs for a 1st-year student:
+    a) "Can I do this program while pursuing my college degree?"
+       (The #1 question this persona has — answered nowhere on the page)
+
+    b) "Will this program conflict with my college exams or semester schedule?"
+       (Students need reassurance about exam-period flexibility)
+
+    c) "I'm in 1st year of college — will I get the Certificate or PG
+       Certificate?" (Pricing section handles this, but many students won't
+       scroll that far before checking FAQ)
+
+    d) "Will the IIT Roorkee Certificate help me during college placements?"
+       (The most career-relevant question for a 1st-year student — placement
+       season is the primary motivation for this investment)
+
+    e) "Is ₹99,000 worth it for a college student?"
+       (Parents will ask. An ROI-framed answer about placement outcomes,
+       certificate value, and portfolio building would be persuasive.)
+
+
+16. PRICING
+    Rating: ✅ Clear on structure, ⚠️ Price may be a barrier without ROI context
+
+    - The two-track layout (PG Certificate vs Certificate) is clean and the
+      distinction is clearly explained.
+    - A 1st-year student immediately knows they fall under the "Certificate"
+      track (₹99,000).
+    - EMI option is good — this will likely be the payment mode for a student
+      whose parents are funding this.
+    - Batch chips showing timings and availability are well-executed.
+
+    Concerns:
+    a) ₹99,000 is a significant sum for a family paying college fees
+       simultaneously. The page doesn't make the ROI case anywhere near the
+       price. A short "Why it's worth it" note near the pricing card — e.g.,
+       "Students who completed CloudxLab programs have gone on to roles at..."
+       — would reduce price anxiety.
+
+    b) The eligibility line says "Bachelor's degree in any stream" for PG
+       track and "10th grade completion onwards" for the Certificate track.
+       But there's no explicit statement saying "If you're currently in
+       college (1st/2nd/3rd year), you qualify for the Certificate track."
+       Adding this would prevent confusion for students who think "10th grade
+       completion" might mean they need to have completed 12th grade.
+
+    c) There is no mention of scholarships or early-bird discounts for
+       students. If any exist, this would be the right place to show them.
+
+
+17. CTA ("Ready to become an inventor?")
+    Rating: ✅ Adequate
+
+    - The tagline works. "A changed perspective" is the right emotional hook.
+    - "Apply for Jun 2026 Batch →" is specific and actionable.
+
+    Concern: For this persona, the CTA would be stronger if it acknowledged
+    them: "Start before your peers do — your college classmates will still be
+    memorising when you're inventing."
+
+
+─────────────────────────────────────────────────────────────────────────────
+TOP PRIORITY GAPS TO FIX (for 1st-year student persona)
+─────────────────────────────────────────────────────────────────────────────
+
+Priority 1 — CRITICAL (likely causing drop-offs)
+  a) Add an FAQ: "Can I do this while pursuing my college degree?"
+  b) Program Details card: Remove "Designed for working professionals" or
+     change to "Fits around college or work schedule."
+  c) Career section: Add timeline context — clarify this complements a degree
+     and helps with placements, not replaces the degree.
+
+Priority 2 — HIGH IMPACT
+  d) Add an FAQ: "Will this help with college placements / campus hiring?"
+  e) Campus Immersion section: Mention the additional campus fee inline
+     (not just in FAQ) to avoid surprise.
+  f) Pricing section: Add a brief ROI signal near the ₹99,000 card.
+  g) Hero: Add "Jointly certified by IIT Roorkee" or equivalent to address
+     the legitimacy question immediately.
+
+Priority 3 — NICE TO HAVE
+  h) Who Is This For — "Students" card: Expand with placement / portfolio
+     benefit.
+  i) Inclusion section: Address mixed-cohort anxiety by framing it as a
+     feature.
+  j) Instructor card for IIT Professors: Name at least one professor to
+     increase credibility.
+  k) Add FAQ: "I'm in 1st year of college — which certificate will I receive?"
+
+─────────────────────────────────────────────────────────────────────────────
+OVERALL IMPRESSION FROM THIS PERSONA
+─────────────────────────────────────────────────────────────────────────────
+
+The page is visually impressive and the content is generally strong. A
+1st-year student will find the IIT Roorkee branding, the campus immersion,
+and the curriculum exciting. The biggest gap is that the page is primarily
+written for working professionals who need a career transition. It doesn't
+explicitly invite or reassure the college student — who is arguably the most
+natural audience for this program.
+
+Three changes alone would make this page significantly more effective for this
+persona: (1) answer "Can I do this while in college?", (2) change "designed
+for working professionals" to something inclusive, and (3) add one sentence
+near the Careers section about placements.
+
+Score: 7/10 as-is for this persona. Could be 9/10 with the Priority 1 fixes.
